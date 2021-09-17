@@ -14,7 +14,7 @@ struct CoursesViewTitle: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 3) {
                 HStack {
                     Text("Today's Courses")
                         .bold()
