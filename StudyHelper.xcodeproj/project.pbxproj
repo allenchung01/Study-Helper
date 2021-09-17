@@ -13,6 +13,11 @@
 		37B4B38E26F50AA400A8FB07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B4B38D26F50AA400A8FB07 /* Preview Assets.xcassets */; };
 		37B4B39026F50AA400A8FB07 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B38F26F50AA400A8FB07 /* Persistence.swift */; };
 		37B4B39326F50AA500A8FB07 /* StudyHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B39126F50AA500A8FB07 /* StudyHelper.xcdatamodeld */; };
+		37B4B39C26F50CA600A8FB07 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B39B26F50CA600A8FB07 /* HomeView.swift */; };
+		37B4B39E26F50D7C00A8FB07 /* CoursesViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B39D26F50D7C00A8FB07 /* CoursesViewTitle.swift */; };
+		37B4B3A026F516D700A8FB07 /* CoursesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */; };
+		37B4B3A226F51AC900A8FB07 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A126F51AC900A8FB07 /* CourseCell.swift */; };
+		37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A426F51B3D00A8FB07 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		37B4B38F26F50AA400A8FB07 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		37B4B39226F50AA500A8FB07 /* StudyHelper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudyHelper.xcdatamodel; sourceTree = "<group>"; };
 		37B4B39426F50AA500A8FB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37B4B39B26F50CA600A8FB07 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		37B4B39D26F50D7C00A8FB07 /* CoursesViewTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewTitle.swift; sourceTree = "<group>"; };
+		37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesScrollView.swift; sourceTree = "<group>"; };
+		37B4B3A126F51AC900A8FB07 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		37B4B3A426F51B3D00A8FB07 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 			children = (
 				37B4B38626F50AA100A8FB07 /* StudyHelperApp.swift */,
 				37B4B38826F50AA100A8FB07 /* ContentView.swift */,
+				37B4B3A326F51B2F00A8FB07 /* Helpers */,
+				37B4B39A26F50C7900A8FB07 /* HomeView */,
 				37B4B38A26F50AA400A8FB07 /* Assets.xcassets */,
 				37B4B38F26F50AA400A8FB07 /* Persistence.swift */,
 				37B4B39426F50AA500A8FB07 /* Info.plist */,
@@ -73,6 +85,25 @@
 				37B4B38D26F50AA400A8FB07 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37B4B39A26F50C7900A8FB07 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				37B4B39B26F50CA600A8FB07 /* HomeView.swift */,
+				37B4B39D26F50D7C00A8FB07 /* CoursesViewTitle.swift */,
+				37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */,
+				37B4B3A126F51AC900A8FB07 /* CourseCell.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		37B4B3A326F51B2F00A8FB07 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				37B4B3A426F51B3D00A8FB07 /* Colors.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +176,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B4B39026F50AA400A8FB07 /* Persistence.swift in Sources */,
+				37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */,
+				37B4B39E26F50D7C00A8FB07 /* CoursesViewTitle.swift in Sources */,
+				37B4B39C26F50CA600A8FB07 /* HomeView.swift in Sources */,
 				37B4B39326F50AA500A8FB07 /* StudyHelper.xcdatamodeld in Sources */,
+				37B4B3A226F51AC900A8FB07 /* CourseCell.swift in Sources */,
 				37B4B38926F50AA100A8FB07 /* ContentView.swift in Sources */,
+				37B4B3A026F516D700A8FB07 /* CoursesScrollView.swift in Sources */,
 				37B4B38726F50AA100A8FB07 /* StudyHelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
