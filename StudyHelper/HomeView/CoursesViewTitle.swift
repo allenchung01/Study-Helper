@@ -7,16 +7,28 @@
 
 import SwiftUI
 
+// Dynamic title that includes the current date and updates
+// the icon based on the current time.
 struct CoursesViewTitle: View {
-    var date: String
+    let timeManager = TimeManager()
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Today's Courses")
-                    .bold()
-                    .font(.title)
-                Text(date)
+                HStack {
+                    Text("Today's Courses")
+                        .bold()
+                    switch timeManager.timeOfDay {
+                    case .morning:
+                        Image(systemName: "sun.min.fill")
+                    case .noon:
+                        Image(systemName: "sun.max.fill")
+                    case .night:
+                        Image(systemName: "moon.stars.fill")
+                    }
+                }
+                .font(.title)
+                Text(timeManager.fullDate)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
@@ -27,8 +39,7 @@ struct CoursesViewTitle: View {
 
 struct CoursesViewTitle_Previews: PreviewProvider {
     static var previews: some View {
-        let date = "Friday, September 17, 2021"
-        CoursesViewTitle(date: date)
+        CoursesViewTitle()
             .padding(30)
             .previewLayout(.sizeThatFits)
     }

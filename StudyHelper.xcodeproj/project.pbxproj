@@ -18,6 +18,8 @@
 		37B4B3A026F516D700A8FB07 /* CoursesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */; };
 		37B4B3A226F51AC900A8FB07 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A126F51AC900A8FB07 /* CourseCell.swift */; };
 		37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A426F51B3D00A8FB07 /* Colors.swift */; };
+		37B4B3A726F5288200A8FB07 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A626F5288200A8FB07 /* TimeManager.swift */; };
+		37B4B3A926F5365200A8FB07 /* DashboardProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesScrollView.swift; sourceTree = "<group>"; };
 		37B4B3A126F51AC900A8FB07 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		37B4B3A426F51B3D00A8FB07 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		37B4B3A626F5288200A8FB07 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			children = (
 				37B4B39B26F50CA600A8FB07 /* HomeView.swift */,
 				37B4B39D26F50D7C00A8FB07 /* CoursesViewTitle.swift */,
+				37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */,
+				37B4B3A626F5288200A8FB07 /* TimeManager.swift */,
 				37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */,
 				37B4B3A126F51AC900A8FB07 /* CourseCell.swift */,
 			);
@@ -183,6 +189,8 @@
 				37B4B3A226F51AC900A8FB07 /* CourseCell.swift in Sources */,
 				37B4B38926F50AA100A8FB07 /* ContentView.swift in Sources */,
 				37B4B3A026F516D700A8FB07 /* CoursesScrollView.swift in Sources */,
+				37B4B3A726F5288200A8FB07 /* TimeManager.swift in Sources */,
+				37B4B3A926F5365200A8FB07 /* DashboardProfileView.swift in Sources */,
 				37B4B38726F50AA100A8FB07 /* StudyHelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

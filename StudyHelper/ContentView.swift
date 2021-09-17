@@ -20,7 +20,7 @@ struct ContentView: View {
         ZStack {
             Color(.mySecondaryBackground)
                 .ignoresSafeArea()
-            HomeView(courses: ["CS 211", "CS 250"])
+            HomeView(courses: ["CS 211", "CS 250"], name: "Allen")
         }
     }
 
