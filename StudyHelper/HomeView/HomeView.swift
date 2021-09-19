@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
-    var courses: [String]
     var name: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
             DashboardProfileView(name: name)
             CoursesViewTitle()
-            CoursesScrollView(courses: courses)
+            CoursesScrollView()
                 .padding(-30)
             Text("Upcoming Assignments")
-                .bold()
                 .font(.title)
+                .bold()
             Text("Scheduled Events")
                 .bold()
                 .font(.title)
@@ -31,12 +30,13 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let courses = ["CS 211", "CS 250", "CS 377", "MATH 210"]
+        let context = PersistenceController.preview.container.viewContext
         let name = "Allen"
         ZStack {
             Color(.mySecondaryBackground)
                 .ignoresSafeArea()
-            HomeView(courses: courses, name: name)
+            HomeView(name: name)
+                .environment(\.managedObjectContext, context)
         }
     }
 }

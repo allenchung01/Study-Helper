@@ -14,10 +14,11 @@ enum TimeOfDay {
 }
 
 class TimeManager {
-    var date: Date { Date() }
-    let calendar = Calendar.current
     
-    var timeOfDay: TimeOfDay {
+    static let calendar = Calendar.current
+    
+    static var timeOfDay: TimeOfDay {
+        let date = Date()
         let hour = calendar.component(.hour, from: date)
         if hour >= 5 && hour < 12 {
             return .morning
@@ -28,11 +29,25 @@ class TimeManager {
         }
     }
     
-    var fullDate: String {
-        dateFormatter.string(from: date)
+    // Example: Friday, September 17, 2021
+    static var fullDate: String {
+        let date = Date()
+        return dateFormatter.string(from: date)
     }
     
-    private let dateFormatter: DateFormatter = {
+    // Example: 1:00 pm
+    static func timeFromDate(date: Date) -> String {
+        return timeFormatter.string(from: date)
+    }
+    
+    private static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return formatter
+    }()
+    
+    private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .full
         formatter.timeStyle = .none

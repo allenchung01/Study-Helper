@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct CourseCell: View {
-    var course: String
+    private var course: Course
+    private var startTimeString: String
+    private var endTimeString: String
+    
+    init(course: Course) {
+        self.course = course
+        startTimeString = TimeManager.timeFromDate(date: course.startTime!)
+        endTimeString = TimeManager.timeFromDate(date: course.endTime!)
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 3) {
-                Text(course)
+                Text(course.name!)
                     .bold()
                 HStack(alignment: .center, spacing: 6) {
                     Image(systemName: "clock")
-                    Text("1:00 pm - 1:45 pm")
+                    Text("\(startTimeString) - \(endTimeString)")
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -25,22 +33,27 @@ struct CourseCell: View {
             Text("Awaiting Start") // In Progress(green) // Concluded(red)
                 .font(.caption)
                 .foregroundColor(.blue)
-                .padding(.vertical, 5)
-                .padding(.horizontal, 8)
+                .padding(.vertical, 6)
+                .padding(.horizontal, 12)
                 .background(Color.blue.opacity(0.1))
-                .cornerRadius(5.0)
+                .cornerRadius(.greatestFiniteMagnitude)
+                //.cornerRadius(5.0)
         }
         .padding(30)
         .background(Color.myPrimaryBackground)
-        .cornerRadius(10.0)
+        .cornerRadius(20.0)
         .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)
     }
 }
 
 struct CourseCell_Previews: PreviewProvider {
     static var previews: some View {
-        let course = "CS 255"
-        CourseCell(course: course)
+        let context = PersistenceController.preview.container.viewContext
+        let course = Course(context: context)
+        course.name = "CS 255"
+        course.startTime = Date()
+        course.endTime = Date()
+        return CourseCell(course: course)
             .padding(30)
             .background(Color.mySecondaryBackground)
             .previewLayout(.sizeThatFits)

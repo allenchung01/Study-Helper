@@ -17,6 +17,8 @@ struct PersistenceController {
             let course = Course(context: viewContext)
             course.timestamp = Date()
             course.name = "CS 255"
+            course.startTime = Date()
+            course.endTime = Date()
         }
         do {
             try viewContext.save()

@@ -1,35 +1,39 @@
 //
-//  CoursesScrollView.swift
+//  AllCoursesGrid.swift
 //  StudyHelper
 //
-//  Created by Allen Chung on 9/17/21.
+//  Created by Allen Chung on 9/18/21.
 //
 
 import SwiftUI
 
-struct CoursesScrollView: View {
+struct AllCoursesGrid: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Course.timestamp, ascending: true)],
         animation: .default)
     private var courses: FetchedResults<Course>
     
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 20) {
-                ForEach(courses, id: \.self) { course in
-                    CourseCell(course: course)
-                }
+        LazyVGrid(columns: columns) {
+            ForEach(courses, id: \Course.timestamp) { course in
+                CourseCell(course: course)
             }
-            .padding(30)
         }
+        //.frame(height: 100)
     }
 }
 
-struct CoursesScrollView_Previews: PreviewProvider {
+struct AllCoursesGrid_Previews: PreviewProvider {
     static var previews: some View {
         let context = PersistenceController.preview.container.viewContext
-        CoursesScrollView()
+        AllCoursesGrid()
             .environment(\.managedObjectContext, context)
+            .padding(30)
             .previewLayout(.sizeThatFits)
     }
 }

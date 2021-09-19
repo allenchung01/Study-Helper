@@ -13,9 +13,13 @@ struct DashboardProfileView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 30) {
             HStack(alignment: .bottom) {
-                Text("Hey, \(name)")
-                    .bold()
-                    .font(.title3)
+                HStack {
+                    Text("Hey,")
+                        .fontWeight(.light)
+                    Text(name)
+                        .bold()
+                }
+                .font(.title3)
                 Spacer()
                 Circle()
                     .fill(Color.myPrimaryBackground)

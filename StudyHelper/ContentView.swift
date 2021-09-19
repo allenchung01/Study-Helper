@@ -14,14 +14,28 @@ struct ContentView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Course.timestamp, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Course>
+    private var courses: FetchedResults<Course>
 
     var body: some View {
-        ZStack {
-            Color(.mySecondaryBackground)
-                .ignoresSafeArea()
-            HomeView(courses: ["CS 211", "CS 250"], name: "Allen")
+        TabView {
+            ZStack {
+                Color(.mySecondaryBackground)
+                    .ignoresSafeArea()
+                HomeView(name: "Allen")
+            }
+            .tabItem {
+                Image(systemName: "house.fill")
+            }
+            ZStack {
+                Color(.mySecondaryBackground)
+                    .ignoresSafeArea()
+                AllCoursesView()
+            }
+            .tabItem {
+                Image(systemName: "folder.fill")
+            }
         }
+        .accentColor(.black)
     }
 
     private func addItem() {
@@ -42,7 +56,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { courses[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -65,6 +79,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

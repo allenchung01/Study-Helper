@@ -10,15 +10,18 @@ import SwiftUI
 // Dynamic title that includes the current date and updates
 // the icon based on the current time.
 struct CoursesViewTitle: View {
-    let timeManager = TimeManager()
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 3) {
                 HStack {
-                    Text("Today's Courses")
+                    Text("Today's")
+                        //.fontWeight(.light)
                         .bold()
-                    switch timeManager.timeOfDay {
+                    Text("Courses")
+                        //.bold()
+                        .fontWeight(.light)
+                    switch TimeManager.timeOfDay {
                     case .morning:
                         Image(systemName: "sun.min.fill")
                     case .noon:
@@ -28,7 +31,7 @@ struct CoursesViewTitle: View {
                     }
                 }
                 .font(.title)
-                Text(timeManager.fullDate)
+                Text(TimeManager.fullDate)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }

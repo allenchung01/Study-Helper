@@ -11,7 +11,7 @@ import SwiftUI
 extension UIColor {
     static let myPrimaryBackground = UIColor.systemBackground
     static let mySecondaryBackground = UIColor.secondarySystemBackground
-    static let myTertiaryBackground = UIColor.tertiarySystemBackground
+    static let myTertiaryBackground = UIColor.systemGray3
 }
 
 extension Color {
