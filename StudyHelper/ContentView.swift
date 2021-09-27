@@ -10,35 +10,45 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    
+    @EnvironmentObject var appEnvironment: AppEnvironment
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Course.timestamp, ascending: true)],
-        animation: .default)
-    private var courses: FetchedResults<Course>
-
+    let gradient = Gradient(colors: [.orange, .white.opacity(0)])
+    
     var body: some View {
-        TabView {
-            ZStack {
-                Color(.mySecondaryBackground)
-                    .ignoresSafeArea()
-                HomeView(name: "Allen")
+        ZStack {
+            TabView {
+                ZStack {
+                    Color(.mySecondaryBackground)
+                        .ignoresSafeArea()
+                    HomeView(name: "Allen")
+                }
+                .tabItem {
+                    Image(systemName: "house.fill")
+                }
+                ZStack {
+                    Color(.mySecondaryBackground)
+                        .ignoresSafeArea()
+                    AllCoursesView()
+                }
+                .tabItem {
+                    Image(systemName: "folder.fill")
+                }
             }
-            .tabItem {
-                Image(systemName: "house.fill")
+            .accentColor(.black)
+            
+            if appEnvironment.isDisplayingAddCourseSuccessBanner {
+                //Banner(text: "Course Added!", color: .systemBlue)
+                Banner(text: "Course Added:", color: UIColor.systemBlue, subText: appEnvironment.subText,  systemImageName: "rectangle.fill.badge.checkmark")
             }
-            ZStack {
-                Color(.mySecondaryBackground)
-                    .ignoresSafeArea()
-                AllCoursesView()
-            }
-            .tabItem {
-                Image(systemName: "folder.fill")
+            if appEnvironment.isDisplayingAddAssignmentSuccessBanner {
+                //Banner(text: "Assignment Added!", color: .systemBlue)
+                Banner(text: "Assignment Added:", color: UIColor.systemBlue, subText: appEnvironment.subText,  systemImageName: "rectangle.fill.badge.checkmark")
             }
         }
-        .accentColor(.black)
     }
 
-    private func addItem() {
+    /*private func addItem() {
         withAnimation {
             let newItem = Course(context: viewContext)
             newItem.timestamp = Date()
@@ -67,7 +77,7 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
+    }*/
 }
 
 private let itemFormatter: DateFormatter = {

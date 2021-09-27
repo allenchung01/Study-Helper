@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3766845D26FEA65800F9BF58 /* CourseGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845C26FEA65800F9BF58 /* CourseGridCell.swift */; };
+		3766845F2701664100F9BF58 /* CourseProgressTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845E2701664100F9BF58 /* CourseProgressTag.swift */; };
+		376684612702269E00F9BF58 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376684602702269E00F9BF58 /* CourseDetailViewModel.swift */; };
+		376A02B326FA7A6C0077297E /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B226FA7A6C0077297E /* CourseDetail.swift */; };
+		376A02B526FA85220077297E /* CourseDetailNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B426FA85220077297E /* CourseDetailNavigationBar.swift */; };
+		376A02B726FA87F40077297E /* CourseDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B626FA87F40077297E /* CourseDetailHeader.swift */; };
 		37B4B38726F50AA100A8FB07 /* StudyHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B38626F50AA100A8FB07 /* StudyHelperApp.swift */; };
 		37B4B38926F50AA100A8FB07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B38826F50AA100A8FB07 /* ContentView.swift */; };
 		37B4B38B26F50AA400A8FB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B4B38A26F50AA400A8FB07 /* Assets.xcassets */; };
@@ -20,6 +26,15 @@
 		37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A426F51B3D00A8FB07 /* Colors.swift */; };
 		37B4B3A726F5288200A8FB07 /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A626F5288200A8FB07 /* TimeManager.swift */; };
 		37B4B3A926F5365200A8FB07 /* DashboardProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */; };
+		37DB7F5226FADF2A007B1C0F /* AssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F5126FADF2A007B1C0F /* AssignmentList.swift */; };
+		37DB7F5626FB9467007B1C0F /* AssignmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F5526FB9467007B1C0F /* AssignmentRow.swift */; };
+		37DB7F5826FB9BF3007B1C0F /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F5726FB9BF3007B1C0F /* CheckBox.swift */; };
+		37DB7F5A26FBA145007B1C0F /* ConditionalModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F5926FBA145007B1C0F /* ConditionalModifiers.swift */; };
+		37DB7F5C26FBA6D4007B1C0F /* DueSoonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F5B26FBA6D4007B1C0F /* DueSoonHeader.swift */; };
+		37DB7F5F26FBB61C007B1C0F /* AssignmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F5E26FBB61C007B1C0F /* AssignmentsService.swift */; };
+		37DB7F6226FBBE9D007B1C0F /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F6126FBBE9D007B1C0F /* AddAssignmentView.swift */; };
+		37DB7F6426FBC10E007B1C0F /* AddAssignmentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F6326FBC10E007B1C0F /* AddAssignmentHeader.swift */; };
+		37DB7F6626FD178B007B1C0F /* IconSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DB7F6526FD178B007B1C0F /* IconSelector.swift */; };
 		37F5B0C626F54A0000C3BA0A /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0C526F54A0000C3BA0A /* Time.swift */; };
 		37F5B0CB26F5AAD400C3BA0A /* AllCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0CA26F5AAD400C3BA0A /* AllCoursesView.swift */; };
 		37F5B0CD26F5AEA400C3BA0A /* AllCoursesGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0CC26F5AEA400C3BA0A /* AllCoursesGrid.swift */; };
@@ -29,9 +44,21 @@
 		37F5B0D626F7BA0900C3BA0A /* TimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0D526F7BA0900C3BA0A /* TimeSelector.swift */; };
 		37F5B0DA26F7DD3600C3BA0A /* InfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0D926F7DD3600C3BA0A /* InfoSection.swift */; };
 		37F5B0DC26F7EC9B00C3BA0A /* AddCourseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0DB26F7EC9B00C3BA0A /* AddCourseHeader.swift */; };
+		37F5B0DE26F7F13E00C3BA0A /* CallToActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0DD26F7F13E00C3BA0A /* CallToActionButton.swift */; };
+		37F5B0EB26F9367B00C3BA0A /* AddCourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0EA26F9367B00C3BA0A /* AddCourseViewModel.swift */; };
+		37F5B0ED26F942FB00C3BA0A /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0EC26F942FB00C3BA0A /* AppEnvironment.swift */; };
+		37F5B0F026FA3DB300C3BA0A /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0EF26FA3DB300C3BA0A /* Banner.swift */; };
+		37F5B0F226FA47FF00C3BA0A /* WeekDaySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0F126FA47FE00C3BA0A /* WeekDaySelector.swift */; };
+		37F5B0F426FA488800C3BA0A /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F5B0F326FA488800C3BA0A /* ToggleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3766845C26FEA65800F9BF58 /* CourseGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGridCell.swift; sourceTree = "<group>"; };
+		3766845E2701664100F9BF58 /* CourseProgressTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressTag.swift; sourceTree = "<group>"; };
+		376684602702269E00F9BF58 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
+		376A02B226FA7A6C0077297E /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
+		376A02B426FA85220077297E /* CourseDetailNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailNavigationBar.swift; sourceTree = "<group>"; };
+		376A02B626FA87F40077297E /* CourseDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailHeader.swift; sourceTree = "<group>"; };
 		37B4B38326F50AA100A8FB07 /* StudyHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B4B38626F50AA100A8FB07 /* StudyHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyHelperApp.swift; sourceTree = "<group>"; };
 		37B4B38826F50AA100A8FB07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +74,15 @@
 		37B4B3A426F51B3D00A8FB07 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		37B4B3A626F5288200A8FB07 /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardProfileView.swift; sourceTree = "<group>"; };
+		37DB7F5126FADF2A007B1C0F /* AssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentList.swift; sourceTree = "<group>"; };
+		37DB7F5526FB9467007B1C0F /* AssignmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentRow.swift; sourceTree = "<group>"; };
+		37DB7F5726FB9BF3007B1C0F /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		37DB7F5926FBA145007B1C0F /* ConditionalModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalModifiers.swift; sourceTree = "<group>"; };
+		37DB7F5B26FBA6D4007B1C0F /* DueSoonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DueSoonHeader.swift; sourceTree = "<group>"; };
+		37DB7F5E26FBB61C007B1C0F /* AssignmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsService.swift; sourceTree = "<group>"; };
+		37DB7F6126FBBE9D007B1C0F /* AddAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
+		37DB7F6326FBC10E007B1C0F /* AddAssignmentHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentHeader.swift; sourceTree = "<group>"; };
+		37DB7F6526FD178B007B1C0F /* IconSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelector.swift; sourceTree = "<group>"; };
 		37F5B0C526F54A0000C3BA0A /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		37F5B0CA26F5AAD400C3BA0A /* AllCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesView.swift; sourceTree = "<group>"; };
 		37F5B0CC26F5AEA400C3BA0A /* AllCoursesGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesGrid.swift; sourceTree = "<group>"; };
@@ -56,6 +92,12 @@
 		37F5B0D526F7BA0900C3BA0A /* TimeSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelector.swift; sourceTree = "<group>"; };
 		37F5B0D926F7DD3600C3BA0A /* InfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSection.swift; sourceTree = "<group>"; };
 		37F5B0DB26F7EC9B00C3BA0A /* AddCourseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseHeader.swift; sourceTree = "<group>"; };
+		37F5B0DD26F7F13E00C3BA0A /* CallToActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionButton.swift; sourceTree = "<group>"; };
+		37F5B0EA26F9367B00C3BA0A /* AddCourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewModel.swift; sourceTree = "<group>"; };
+		37F5B0EC26F942FB00C3BA0A /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		37F5B0EF26FA3DB300C3BA0A /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		37F5B0F126FA47FE00C3BA0A /* WeekDaySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDaySelector.swift; sourceTree = "<group>"; };
+		37F5B0F326FA488800C3BA0A /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +111,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		376A02B126FA7A600077297E /* CourseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				376A02B226FA7A6C0077297E /* CourseDetail.swift */,
+				376A02B626FA87F40077297E /* CourseDetailHeader.swift */,
+				376A02B426FA85220077297E /* CourseDetailNavigationBar.swift */,
+			);
+			path = CourseDetail;
+			sourceTree = "<group>";
+		};
 		37B4B37A26F50AA100A8FB07 = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +142,11 @@
 			children = (
 				37B4B38626F50AA100A8FB07 /* StudyHelperApp.swift */,
 				37B4B38826F50AA100A8FB07 /* ContentView.swift */,
-				37F5B0C426F549F600C3BA0A /* Models */,
+				37DB7F5D26FBB5FD007B1C0F /* Services */,
 				37B4B3A326F51B2F00A8FB07 /* Helpers */,
-				37F5B0D026F7A70300C3BA0A /* AddCourseView */,
-				37F5B0C926F5AAB800C3BA0A /* AllCourses */,
-				37B4B39A26F50C7900A8FB07 /* HomeView */,
+				37F5B0C426F549F600C3BA0A /* Models */,
+				37F5B0E126F81DC800C3BA0A /* ViewModels */,
+				37F5B0DF26F81DA100C3BA0A /* Views */,
 				37B4B38A26F50AA400A8FB07 /* Assets.xcassets */,
 				37B4B38F26F50AA400A8FB07 /* Persistence.swift */,
 				37B4B39426F50AA500A8FB07 /* Info.plist */,
@@ -116,11 +168,13 @@
 			isa = PBXGroup;
 			children = (
 				37B4B39B26F50CA600A8FB07 /* HomeView.swift */,
+				37DB7F5B26FBA6D4007B1C0F /* DueSoonHeader.swift */,
 				37B4B39D26F50D7C00A8FB07 /* CoursesViewTitle.swift */,
 				37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */,
 				37B4B3A626F5288200A8FB07 /* TimeManager.swift */,
 				37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */,
 				37B4B3A126F51AC900A8FB07 /* CourseCell.swift */,
+				3766845E2701664100F9BF58 /* CourseProgressTag.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -129,8 +183,26 @@
 			isa = PBXGroup;
 			children = (
 				37B4B3A426F51B3D00A8FB07 /* Colors.swift */,
+				37DB7F5926FBA145007B1C0F /* ConditionalModifiers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		37DB7F5D26FBB5FD007B1C0F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				37DB7F5E26FBB61C007B1C0F /* AssignmentsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		37DB7F6026FBBE8B007B1C0F /* AddAssignmentView */ = {
+			isa = PBXGroup;
+			children = (
+				37DB7F6126FBBE9D007B1C0F /* AddAssignmentView.swift */,
+				37DB7F6326FBC10E007B1C0F /* AddAssignmentHeader.swift */,
+			);
+			path = AddAssignmentView;
 			sourceTree = "<group>";
 		};
 		37F5B0C426F549F600C3BA0A /* Models */ = {
@@ -147,6 +219,7 @@
 				37F5B0CA26F5AAD400C3BA0A /* AllCoursesView.swift */,
 				37F5B0CE26F6268C00C3BA0A /* AllCoursesHeader.swift */,
 				37F5B0CC26F5AEA400C3BA0A /* AllCoursesGrid.swift */,
+				3766845C26FEA65800F9BF58 /* CourseGridCell.swift */,
 			);
 			path = AllCourses;
 			sourceTree = "<group>";
@@ -156,11 +229,49 @@
 			children = (
 				37F5B0D126F7A71A00C3BA0A /* AddCourseView.swift */,
 				37F5B0DB26F7EC9B00C3BA0A /* AddCourseHeader.swift */,
-				37F5B0D326F7A91400C3BA0A /* InfoField.swift */,
-				37F5B0D926F7DD3600C3BA0A /* InfoSection.swift */,
-				37F5B0D526F7BA0900C3BA0A /* TimeSelector.swift */,
 			);
 			path = AddCourseView;
+			sourceTree = "<group>";
+		};
+		37F5B0DF26F81DA100C3BA0A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37DB7F6026FBBE8B007B1C0F /* AddAssignmentView */,
+				376A02B126FA7A600077297E /* CourseDetail */,
+				37F5B0EE26FA3D8700C3BA0A /* Other */,
+				37F5B0D026F7A70300C3BA0A /* AddCourseView */,
+				37F5B0C926F5AAB800C3BA0A /* AllCourses */,
+				37B4B39A26F50C7900A8FB07 /* HomeView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37F5B0E126F81DC800C3BA0A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				37F5B0EA26F9367B00C3BA0A /* AddCourseViewModel.swift */,
+				37F5B0EC26F942FB00C3BA0A /* AppEnvironment.swift */,
+				376684602702269E00F9BF58 /* CourseDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		37F5B0EE26FA3D8700C3BA0A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				37DB7F5126FADF2A007B1C0F /* AssignmentList.swift */,
+				37DB7F5726FB9BF3007B1C0F /* CheckBox.swift */,
+				37DB7F5526FB9467007B1C0F /* AssignmentRow.swift */,
+				37F5B0EF26FA3DB300C3BA0A /* Banner.swift */,
+				37F5B0F326FA488800C3BA0A /* ToggleButton.swift */,
+				37F5B0F126FA47FE00C3BA0A /* WeekDaySelector.swift */,
+				37F5B0D326F7A91400C3BA0A /* InfoField.swift */,
+				37F5B0D526F7BA0900C3BA0A /* TimeSelector.swift */,
+				37DB7F6526FD178B007B1C0F /* IconSelector.swift */,
+				37F5B0D926F7DD3600C3BA0A /* InfoSection.swift */,
+				37F5B0DD26F7F13E00C3BA0A /* CallToActionButton.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,25 +343,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DB7F5226FADF2A007B1C0F /* AssignmentList.swift in Sources */,
+				3766845D26FEA65800F9BF58 /* CourseGridCell.swift in Sources */,
+				376A02B326FA7A6C0077297E /* CourseDetail.swift in Sources */,
 				37F5B0C626F54A0000C3BA0A /* Time.swift in Sources */,
+				37F5B0EB26F9367B00C3BA0A /* AddCourseViewModel.swift in Sources */,
 				37F5B0D626F7BA0900C3BA0A /* TimeSelector.swift in Sources */,
 				37B4B39026F50AA400A8FB07 /* Persistence.swift in Sources */,
+				37F5B0F426FA488800C3BA0A /* ToggleButton.swift in Sources */,
 				37F5B0CD26F5AEA400C3BA0A /* AllCoursesGrid.swift in Sources */,
+				37F5B0ED26F942FB00C3BA0A /* AppEnvironment.swift in Sources */,
 				37F5B0D226F7A71A00C3BA0A /* AddCourseView.swift in Sources */,
+				376A02B726FA87F40077297E /* CourseDetailHeader.swift in Sources */,
 				37F5B0DA26F7DD3600C3BA0A /* InfoSection.swift in Sources */,
+				37DB7F5A26FBA145007B1C0F /* ConditionalModifiers.swift in Sources */,
+				37DB7F5F26FBB61C007B1C0F /* AssignmentsService.swift in Sources */,
 				37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */,
+				37DB7F6226FBBE9D007B1C0F /* AddAssignmentView.swift in Sources */,
 				37B4B39E26F50D7C00A8FB07 /* CoursesViewTitle.swift in Sources */,
+				376684612702269E00F9BF58 /* CourseDetailViewModel.swift in Sources */,
 				37B4B39C26F50CA600A8FB07 /* HomeView.swift in Sources */,
 				37B4B39326F50AA500A8FB07 /* StudyHelper.xcdatamodeld in Sources */,
+				37DB7F5826FB9BF3007B1C0F /* CheckBox.swift in Sources */,
 				37B4B3A226F51AC900A8FB07 /* CourseCell.swift in Sources */,
 				37F5B0D426F7A91400C3BA0A /* InfoField.swift in Sources */,
+				37F5B0F226FA47FF00C3BA0A /* WeekDaySelector.swift in Sources */,
+				37DB7F6426FBC10E007B1C0F /* AddAssignmentHeader.swift in Sources */,
 				37B4B38926F50AA100A8FB07 /* ContentView.swift in Sources */,
 				37F5B0CF26F6268C00C3BA0A /* AllCoursesHeader.swift in Sources */,
+				37DB7F5626FB9467007B1C0F /* AssignmentRow.swift in Sources */,
+				3766845F2701664100F9BF58 /* CourseProgressTag.swift in Sources */,
+				376A02B526FA85220077297E /* CourseDetailNavigationBar.swift in Sources */,
 				37B4B3A026F516D700A8FB07 /* CoursesScrollView.swift in Sources */,
+				37DB7F6626FD178B007B1C0F /* IconSelector.swift in Sources */,
+				37F5B0DE26F7F13E00C3BA0A /* CallToActionButton.swift in Sources */,
 				37B4B3A726F5288200A8FB07 /* TimeManager.swift in Sources */,
 				37B4B3A926F5365200A8FB07 /* DashboardProfileView.swift in Sources */,
 				37B4B38726F50AA100A8FB07 /* StudyHelperApp.swift in Sources */,
+				37F5B0F026FA3DB300C3BA0A /* Banner.swift in Sources */,
 				37F5B0CB26F5AAD400C3BA0A /* AllCoursesView.swift in Sources */,
+				37DB7F5C26FBA6D4007B1C0F /* DueSoonHeader.swift in Sources */,
 				37F5B0DC26F7EC9B00C3BA0A /* AddCourseHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = 8V63N33U8R;
@@ -401,6 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StudyHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = 8V63N33U8R;
