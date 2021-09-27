@@ -17,20 +17,20 @@ struct DashboardProfileView: View {
                     switch TimeManager.timeOfDay {
                     case .morning:
                         Text("Good morning,")
-                            .bold()
-                            .fontWeight(.light)
+                            .fontWeight(.semibold)
+                            //.fontWeight(.light)
                     case .noon:
                         Text("Good afternoon,")
-                            .bold()
-                            .fontWeight(.light)
+                            .fontWeight(.semibold)
+                            //.fontWeight(.light)
                     case .night:
                         Text("Good evening,")
-                            .bold()
-                            .fontWeight(.light)
+                            .fontWeight(.semibold)
+                            //.fontWeight(.light)
                     }
                         //.fontWeight(.light)
                     Text(name)
-                        .bold()
+                        .fontWeight(.semibold)
                     switch TimeManager.timeOfDay {
                     case .morning:
                         Image(systemName: "sun.min.fill")

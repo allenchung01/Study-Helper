@@ -14,18 +14,27 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 30) {
+            VStack(alignment: .leading, spacing: 40) {
                 DashboardProfileView(name: name)
-                CoursesViewTitle()
-                    .padding(.top, 15)
-                CoursesScrollView()
-                    .padding(-30)
-                DueSoonHeader()
-                    .padding(.top, 15)
-                AssignmentList()
+                    //.padding(.bottom, 30)
+                VStack(alignment: .leading, spacing: 20) {
+                    CoursesViewTitle()
+                        //.padding(.top, 15)
+                    CoursesScrollView()
+                        .padding(-30)
+                }
+                /*.background(
+                    Color.myComplementaryColor
+                        .padding(-30)
+                )*/
+                VStack(alignment: .leading, spacing: 20) {
+                    DueSoonHeader()
+                        //.padding(.top, 15)
+                    AssignmentList()
+                }
                 Text("Exams")
                     .bold()
-                    .font(.title)
+                    .font(.title2)
                     .padding(.top, 15)
                 Spacer()
             }

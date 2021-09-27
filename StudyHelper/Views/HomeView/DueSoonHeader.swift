@@ -12,8 +12,8 @@ struct DueSoonHeader: View {
         HStack {
             VStack(alignment: .leading, spacing: 3) {
                 Text("Due Soon")
-                    .font(.title)
-                    .bold()
+                    .font(.title2)
+                    .fontWeight(.semibold)
                 /*Text("Assignments due within the next week.")
                     .font(.subheadline)
                     .foregroundColor(.secondary)*/

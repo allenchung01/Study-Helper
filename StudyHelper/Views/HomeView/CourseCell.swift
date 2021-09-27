@@ -21,28 +21,44 @@ struct CourseCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 3) {
-                HStack(alignment: .center, spacing: 10) {
-                    Text(course.name!)
-                        .bold()
+                VStack(alignment: .leading, spacing: 10) {
                     if !course.systemImageName!.isEmpty {
                         Image(systemName: course.systemImageName!)
+                            .font(.caption)
+                            .frame(width: 40, height: 40)
+                            //.padding(10)
+                            .background(Color.myComplementaryColor)
+                            .cornerRadius(10.0)
+                    }
+                    HStack(alignment: .center, spacing: 10) {
+                        Text(course.name!)
+                            .fontWeight(.semibold)
+                        let date = Date()
+                        if TimeManager.compareDates(date1: date, date2: course.startTime!) {
+                            CourseProgressTag(progress: .awaitingStart)
+                        } else if TimeManager.compareDates(date1: course.endTime!, date2: date) {
+                            CourseProgressTag(progress: .concluded)
+                        } else {
+                            CourseProgressTag(progress: .inProgress)
+                        }
                     }
                 }
                 HStack(alignment: .center, spacing: 6) {
                     //Image(systemName: "clock")
                     Text("\(startTimeString) - \(endTimeString)")
+                        .fontWeight(.light)
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
             }
-            let date = Date()
+            /*let date = Date()
             if TimeManager.compareDates(date1: date, date2: course.startTime!) {
                 CourseProgressTag(progress: .awaitingStart)
             } else if TimeManager.compareDates(date1: course.endTime!, date2: date) {
                 CourseProgressTag(progress: .concluded)
             } else {
                 CourseProgressTag(progress: .inProgress)
-            }
+            }*/
         }
         .padding(30)
         .background(Color.myPrimaryBackground)
@@ -53,6 +69,20 @@ struct CourseCell: View {
                 .padding(10)
                 .offset(x: 0, y: -20)
         )
+        /*.overlay (
+            VStack(alignment: .trailing) {
+                Spacer()
+                let date = Date()
+                if TimeManager.compareDates(date1: date, date2: course.startTime!) {
+                    CourseProgressTag(progress: .awaitingStart)
+                } else if TimeManager.compareDates(date1: course.endTime!, date2: date) {
+                    CourseProgressTag(progress: .concluded)
+                } else {
+                    CourseProgressTag(progress: .inProgress)
+                }
+            }
+                .offset(x: 0, y: 16)
+        )*/
         .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         
     }

@@ -20,10 +20,11 @@ struct CoursesViewTitle: View {
                     .foregroundColor(.secondary)
                 HStack {
                     Text("Today's")
-                        //.fontWeight(.light)
-                        .bold()
+                        .fontWeight(.semibold)
+                        //.bold()
                     Text("Courses")
-                        .bold()
+                        .fontWeight(.semibold)
+                        //.bold()
                         //.fontWeight(.light)
                     /*switch TimeManager.timeOfDay {
                     case .morning:

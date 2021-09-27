@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3714C39B270255D9007A3FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B4B38A26F50AA400A8FB07 /* Assets.xcassets */; };
 		3766845D26FEA65800F9BF58 /* CourseGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845C26FEA65800F9BF58 /* CourseGridCell.swift */; };
 		3766845F2701664100F9BF58 /* CourseProgressTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845E2701664100F9BF58 /* CourseProgressTag.swift */; };
 		376684612702269E00F9BF58 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376684602702269E00F9BF58 /* CourseDetailViewModel.swift */; };
@@ -15,7 +16,6 @@
 		376A02B726FA87F40077297E /* CourseDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B626FA87F40077297E /* CourseDetailHeader.swift */; };
 		37B4B38726F50AA100A8FB07 /* StudyHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B38626F50AA100A8FB07 /* StudyHelperApp.swift */; };
 		37B4B38926F50AA100A8FB07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B38826F50AA100A8FB07 /* ContentView.swift */; };
-		37B4B38B26F50AA400A8FB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B4B38A26F50AA400A8FB07 /* Assets.xcassets */; };
 		37B4B38E26F50AA400A8FB07 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B4B38D26F50AA400A8FB07 /* Preview Assets.xcassets */; };
 		37B4B39026F50AA400A8FB07 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B38F26F50AA400A8FB07 /* Persistence.swift */; };
 		37B4B39326F50AA500A8FB07 /* StudyHelper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37B4B39126F50AA500A8FB07 /* StudyHelper.xcdatamodeld */; };
@@ -331,8 +331,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3714C39B270255D9007A3FD2 /* Assets.xcassets in Resources */,
 				37B4B38E26F50AA400A8FB07 /* Preview Assets.xcassets in Resources */,
-				37B4B38B26F50AA400A8FB07 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +509,7 @@
 		37B4B39826F50AA500A8FB07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNew;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,7 +532,7 @@
 		37B4B39926F50AA500A8FB07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconNew;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;

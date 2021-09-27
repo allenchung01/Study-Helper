@@ -42,7 +42,7 @@ struct AssignmentRow: View {
                         .foregroundColor(.secondary)
                         HStack(spacing: 10) {
                             Text(assignment.name!)
-                                .bold()
+                                .fontWeight(.semibold)
                                 .if(assignment.isCompleted, transform: {
                                     $0.strikethrough()
                                 })
@@ -54,6 +54,7 @@ struct AssignmentRow: View {
                         Text(TimeManager.dueDate(from: assignment.dueDate!))
                             .font(.caption)
                             .foregroundColor(.secondary)
+                            .fontWeight(.light)
                     }
                 }
                 Spacer()
@@ -98,9 +99,12 @@ struct AssignmentRow_Previews: PreviewProvider {
         let assignment = Assignment(context: viewContext)
         assignment.name = "Homework 1"
         assignment.dueDate = Date()
+        assignment.isCompleted = false
+        assignment.timestamp = Date()
         
         let course = Course(context: viewContext)
         course.name = "CS 255"
+        course.systemImageName = "laptopcomputer"
         assignment.course = course
         
         return AssignmentRow(assignment: assignment)
