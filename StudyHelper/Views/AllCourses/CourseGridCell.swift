@@ -21,12 +21,23 @@ struct CourseGridCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             VStack(alignment: .leading, spacing: 3) {
+                if !course.systemImageName!.isEmpty {
+                    Image(systemName: course.systemImageName!)
+                        .font(.caption)
+                        .frame(width: 40, height: 40)
+                        //.padding(10)
+                        .background(Color.myComplementaryColor)
+                        .cornerRadius(10.0)
+                }
                 HStack(alignment: .center, spacing: 10) {
                     Text(course.name!)
                         .bold()
-                    if !course.systemImageName!.isEmpty {
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
+                    Spacer()
+                    /*if !course.systemImageName!.isEmpty {
                         Image(systemName: course.systemImageName!)
-                    }
+                    }*/
                 }
                 HStack {
                     course.days![0] == true ? Text("Sun") : nil
@@ -57,6 +68,7 @@ struct CourseGridCell: View {
                 //.cornerRadius(5.0)*/
         }
         .padding(30)
+        .frame(height: 170, alignment: .topLeading)
         .background(Color.myPrimaryBackground)
         .cornerRadius(20.0)
         .background(

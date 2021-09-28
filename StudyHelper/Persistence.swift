@@ -19,7 +19,7 @@ struct PersistenceController {
         course.name = "CS 141"
         course.startTime = Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!
         course.endTime = Calendar.current.date(bySettingHour: 8, minute: 50, second: 0, of: Date())!
-        course.days = [true, true, false, true, false, true, false]
+        course.days = [false, false, true, false, true, false, false]
         course.systemImageName = "laptopcomputer"
         let assignment = Assignment(context: viewContext)
         assignment.name = "Homework 1"
@@ -40,7 +40,7 @@ struct PersistenceController {
         course2.endTime = Calendar.current.date(bySettingHour: 12, minute: 20, second: 0, of: Date())!*/
         course2.startTime = Calendar.current.date(bySettingHour: 22, minute: 50, second: 0, of: Date())!
         course2.endTime = Calendar.current.date(bySettingHour: 23, minute: 0, second: 0, of: Date())!
-        course2.days = [true, true, false, true, false, true, false]
+        course2.days = [false, false, true, false, true, false, false]
         course2.systemImageName = "x.squareroot"
         
         let course3 = Course(context: viewContext)
@@ -50,7 +50,7 @@ struct PersistenceController {
         course3.endTime = Calendar.current.date(bySettingHour: 16, minute: 50, second: 0, of: Date())!*/
         course3.startTime = Calendar.current.date(bySettingHour: 23, minute: 0, second: 0, of: Date())!
         course3.endTime = Calendar.current.date(bySettingHour: 23, minute: 50, second: 0, of: Date())!
-        course3.days = [true, true, false, true, false, true, false]
+        course3.days = [false, false, true, false, true, false, false]
         course3.systemImageName = "music.note"
         do {
             try viewContext.save()

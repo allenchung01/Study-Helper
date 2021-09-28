@@ -16,11 +16,11 @@ struct AllCoursesHeader: View {
     var body: some View {
         HStack {
             Text("All Courses")
-                .bold()
+                .fontWeight(.semibold)
                 .font(.title)
             Spacer()
             Button(action: handleAddCourseButton) {
-                Image(systemName: "folder.fill.badge.plus")
+                Image(systemName: "plus")
             }
         }
         .sheet(isPresented: $isAddingCourse) {

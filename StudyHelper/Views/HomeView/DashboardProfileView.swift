@@ -17,34 +17,47 @@ struct DashboardProfileView: View {
                     switch TimeManager.timeOfDay {
                     case .morning:
                         Text("Good morning,")
-                            .fontWeight(.semibold)
+                            .fontWeight(.light)
                             //.fontWeight(.light)
                     case .noon:
                         Text("Good afternoon,")
-                            .fontWeight(.semibold)
+                            .fontWeight(.light)
                             //.fontWeight(.light)
                     case .night:
                         Text("Good evening,")
-                            .fontWeight(.semibold)
+                            .fontWeight(.light)
                             //.fontWeight(.light)
                     }
                         //.fontWeight(.light)
-                    Text(name)
+                    Text(name + "!")
                         .fontWeight(.semibold)
+                    Spacer()
                     switch TimeManager.timeOfDay {
                     case .morning:
                         Image(systemName: "sun.min.fill")
                             .font(.title3)
+                            .frame(width: 40, height: 40)
+                            .background(Color.myPrimaryBackground)
+                            .cornerRadius(10.0)
+                            .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
                     case .noon:
                         Image(systemName: "sun.max.fill")
                             .font(.title3)
+                            .frame(width: 40, height: 40)
+                            .background(Color.myPrimaryBackground)
+                            .cornerRadius(10.0)
+                            .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
                     case .night:
                         Image(systemName: "moon.stars.fill")
                             .font(.title3)
+                            .frame(width: 40, height: 40)
+                            .background(Color.myPrimaryBackground)
+                            .cornerRadius(10.0)
+                            .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
                     }
                 }
                 .font(.title3)
-                Spacer()
+                
                 /*Circle()
                     .fill(Color.myPrimaryBackground)
                     .frame(width: 30, height: 30)*/

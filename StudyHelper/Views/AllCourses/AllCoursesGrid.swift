@@ -14,12 +14,12 @@ struct AllCoursesGrid: View {
     private var courses: FetchedResults<Course>
     
     let columns = [
-        GridItem(.flexible(), spacing: 10),
-        GridItem(.flexible(), spacing: 10)
+        GridItem(.flexible(), spacing: 20),
+        GridItem(.flexible(), spacing: 20)
     ]
     
     var body: some View {
-        return LazyVGrid(columns: columns, alignment: .center, spacing: 26) {
+        return LazyVGrid(columns: columns, alignment: .center, spacing: 30) {
             ForEach(courses, id: \Course.self) { course in
                 NavigationLink(destination: CourseDetail(course: course)) {
                     CourseGridCell(course: course)
