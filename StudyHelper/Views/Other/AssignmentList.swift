@@ -10,6 +10,8 @@ import SwiftUI
 struct AssignmentList: View {
     var course: Course?
     
+    @Binding var numDays: NumDays
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Assignment.dueDate, ascending: false)],
         animation: .default)
@@ -17,7 +19,10 @@ struct AssignmentList: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            ForEach(filter(assignments: assignments, by: course).sorted(by: assignmentSorter(a:b:)), id: \.self) { assignment in
+            let filtered1 = filter(assignments: assignments, by: course)
+            let filtered2 = filter(assignments: filtered1, by: numDays).sorted(by: assignmentSorter(a:b:))
+            /*let filtered2 = filter(assignments: assignments, by: course).sorted(by: assignmentSorter(a:b:))*/
+            ForEach(filtered2, id: \.self) { assignment in
                 AssignmentRow(assignment: assignment)
                 //Text(assignment.name!)
             }
@@ -33,6 +38,31 @@ struct AssignmentList: View {
             } else {
                 return false
             }
+        })
+    }
+    
+    private func filter(assignments: [Assignment], by numDays: NumDays) -> [Assignment] {
+        var num = 0
+        switch numDays {
+        case .oneDay:
+            num = 1
+        case .threeDays:
+            num = 3
+        case .oneWeek:
+            num = 7
+        case .twoWeeks:
+            num = 14
+        case .oneMonth:
+            num = 31
+        }
+        let date = Date()
+        return assignments.filter({ assignment in
+            let dueDate = assignment.dueDate!
+            let days = Calendar.current.numberOfDaysBetween(from: date, to: dueDate)
+            if days <= num {
+                return true
+            }
+            return false
         })
     }
     
@@ -76,7 +106,7 @@ struct AssignmentList_Previews: PreviewProvider {
         assignment2.timestamp = Date()
         
         course.assignments = [assignment, assignment2]
-        return AssignmentList(course: course)
+        return AssignmentList(course: course, numDays: .constant(.oneWeek))
             .environment(\.managedObjectContext, viewContext)
             .padding(30)
             .background(Color.mySecondaryBackground)

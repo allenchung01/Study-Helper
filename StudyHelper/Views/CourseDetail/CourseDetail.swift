@@ -13,6 +13,7 @@ struct CourseDetail: View {
     var course: Course
     
     @State private var isShowingAddAssignmentView = false
+    @State private var numDays: NumDays = .oneWeek
     
     var body: some View {
         return ZStack {
@@ -52,7 +53,7 @@ struct CourseDetail: View {
                             }
                         }
                         if course.assignments?.count != 0 {
-                            AssignmentList(course: course)
+                            AssignmentList(course: course, numDays: $numDays)
                         }
                     }
                     

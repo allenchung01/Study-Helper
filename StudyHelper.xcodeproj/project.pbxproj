@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3714C39B270255D9007A3FD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37B4B38A26F50AA400A8FB07 /* Assets.xcassets */; };
+		3714C39D270277A0007A3FD2 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3714C39C2702779F007A3FD2 /* CustomTabBar.swift */; };
 		3766845D26FEA65800F9BF58 /* CourseGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845C26FEA65800F9BF58 /* CourseGridCell.swift */; };
 		3766845F2701664100F9BF58 /* CourseProgressTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845E2701664100F9BF58 /* CourseProgressTag.swift */; };
 		376684612702269E00F9BF58 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376684602702269E00F9BF58 /* CourseDetailViewModel.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3714C39C2702779F007A3FD2 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		3766845C26FEA65800F9BF58 /* CourseGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGridCell.swift; sourceTree = "<group>"; };
 		3766845E2701664100F9BF58 /* CourseProgressTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressTag.swift; sourceTree = "<group>"; };
 		376684602702269E00F9BF58 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				37DB7F5126FADF2A007B1C0F /* AssignmentList.swift */,
 				37DB7F5726FB9BF3007B1C0F /* CheckBox.swift */,
+				3714C39C2702779F007A3FD2 /* CustomTabBar.swift */,
 				37DB7F5526FB9467007B1C0F /* AssignmentRow.swift */,
 				37F5B0EF26FA3DB300C3BA0A /* Banner.swift */,
 				37F5B0F326FA488800C3BA0A /* ToggleButton.swift */,
@@ -359,6 +362,7 @@
 				37DB7F5A26FBA145007B1C0F /* ConditionalModifiers.swift in Sources */,
 				37DB7F5F26FBB61C007B1C0F /* AssignmentsService.swift in Sources */,
 				37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */,
+				3714C39D270277A0007A3FD2 /* CustomTabBar.swift in Sources */,
 				37DB7F6226FBBE9D007B1C0F /* AddAssignmentView.swift in Sources */,
 				37B4B39E26F50D7C00A8FB07 /* CoursesViewTitle.swift in Sources */,
 				376684612702269E00F9BF58 /* CourseDetailViewModel.swift in Sources */,

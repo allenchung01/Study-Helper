@@ -11,6 +11,9 @@ import CoreData
 class CourseDataViewModel {
     
     func deleteCourse(course: Course, viewContext: NSManagedObjectContext) {
+        for assign in course.assignments!.allObjects {
+            viewContext.delete(assign as! NSManagedObject)
+        }
         viewContext.delete(course)
         saveContext(viewContext: viewContext)
     }

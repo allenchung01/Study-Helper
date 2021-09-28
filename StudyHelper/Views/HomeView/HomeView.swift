@@ -12,6 +12,8 @@ struct HomeView: View {
     
     var name: String
     
+    @State private var numDays: NumDays = .oneWeek
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 40) {
@@ -28,12 +30,12 @@ struct HomeView: View {
                         .padding(-30)
                 )*/
                 VStack(alignment: .leading, spacing: 20) {
-                    DueSoonHeader()
+                    DueSoonHeader(selectedNumDays: $numDays)
                         //.padding(.top, 15)
-                    AssignmentList()
+                    AssignmentList(numDays: $numDays)
                 }
                 Text("Exams")
-                    .bold()
+                    .fontWeight(.semibold)
                     .font(.title2)
                     .padding(.top, 15)
                 Spacer()

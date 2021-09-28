@@ -82,8 +82,20 @@ class TimeManager {
     
     private static let dueDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .full
-        formatter.timeStyle = .short
+        let template = "EEEEdMMMhm"
+        let format = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: NSLocale.current)
+        formatter.dateFormat = format
+        /*formatter.dateStyle = .full
+        formatter.timeStyle = .short*/
         return formatter
     }()
+}
+
+extension Calendar {
+    func numberOfDaysBetween(from: Date, to: Date) -> Int {
+        let fromDate = startOfDay(for: from)
+        let toDate = startOfDay(for: to)
+        let numberOfDays = dateComponents([.day], from: fromDate, to: toDate)
+        return numberOfDays.day!
+    }
 }

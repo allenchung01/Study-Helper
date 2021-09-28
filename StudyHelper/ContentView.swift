@@ -17,7 +17,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            TabView {
+            /*TabView {
                 ZStack {
                     Color(.mySecondaryBackground)
                         .ignoresSafeArea()
@@ -36,6 +36,9 @@ struct ContentView: View {
                 }
             }
             .accentColor(.black)
+             */
+            CustomTabBar()
+                .accentColor(.black)
             
             if appEnvironment.isDisplayingAddCourseSuccessBanner {
                 //Banner(text: "Course Added!", color: .systemBlue)

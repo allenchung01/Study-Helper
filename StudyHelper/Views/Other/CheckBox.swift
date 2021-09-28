@@ -15,7 +15,7 @@ struct CheckBox: View {
     var body: some View {
         Button(action: toggleButton) {
             Image(systemName: selected ? "checkmark.circle.fill" : "circle")
-                .foregroundColor(.myButtonColor)
+                .foregroundColor(.black)
         }
     }
     

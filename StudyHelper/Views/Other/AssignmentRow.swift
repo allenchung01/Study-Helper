@@ -28,16 +28,18 @@ struct AssignmentRow: View {
             .background(Color(.systemRed).opacity(offset < -160 ? 0.9 : 0.4))
             .cornerRadius(15.0)
             // Actual Cell
+            if assignment.name != nil {
             HStack(alignment: .center, spacing: 0) {
                 VStack(alignment: .leading, spacing: 3) {
                     if !assignment.isFault && assignment.course != nil {
                         HStack(alignment: .center, spacing: 10) {
                             Text(assignment.course!.name!)
                                 .font(.subheadline)
-                            if !assignment.course!.systemImageName!.isEmpty {
+                                //.fontWeight(.light)
+                            /*if !assignment.course!.systemImageName!.isEmpty {
                                 Image(systemName: assignment.course!.systemImageName!)
                                     .font(.subheadline)
-                            }
+                            }*/
                         }
                         .foregroundColor(.secondary)
                         HStack(spacing: 10) {
@@ -81,6 +83,21 @@ struct AssignmentRow: View {
                         }
                     })
             )
+            if !assignment.course!.systemImageName!.isEmpty {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: assignment.course!.systemImageName!)
+                            .font(.caption2)
+                            .frame(width: 36, height: 36)
+                            //.padding(0)
+                            .background(Color.myComplementaryColor)
+                            .cornerRadius(10.0)
+                            .padding(30)
+                    }
+                }
+            }
+            }
         }
     }
     
