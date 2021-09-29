@@ -29,6 +29,7 @@ struct CourseGridCell: View {
                         .background(Color.myComplementaryColor)
                         .cornerRadius(10.0)
                 }
+                Spacer()
                 HStack(alignment: .center, spacing: 10) {
                     Text(course.name!)
                         .bold()
@@ -40,13 +41,13 @@ struct CourseGridCell: View {
                     }*/
                 }
                 HStack {
-                    course.days![0] == true ? Text("Sun") : nil
-                    course.days![1] == true ? Text("Mon") : nil
-                    course.days![2] == true ? Text("Tue") : nil
-                    course.days![3] == true ? Text("Wed") : nil
-                    course.days![4] == true ? Text("Thu") : nil
-                    course.days![5] == true ? Text("Fri") : nil
-                    course.days![6] == true ? Text("Sat") : nil
+                    course.days![0] == true ? Text("Sun").fontWeight(.light) : nil
+                    course.days![1] == true ? Text("Mon").fontWeight(.light) : nil
+                    course.days![2] == true ? Text("Tue").fontWeight(.light) : nil
+                    course.days![3] == true ? Text("Wed").fontWeight(.light) : nil
+                    course.days![4] == true ? Text("Thu").fontWeight(.light) : nil
+                    course.days![5] == true ? Text("Fri").fontWeight(.light) : nil
+                    course.days![6] == true ? Text("Sat").fontWeight(.light) : nil
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -58,17 +59,9 @@ struct CourseGridCell: View {
                 .font(.caption)
                 .foregroundColor(.secondary)*/
             }
-            /*Text("Awaiting Start") // In Progress(green) // Concluded(red)
-                .font(.caption)
-                .foregroundColor(.myButtonColor)
-                .padding(.vertical, 7)
-                .padding(.horizontal, 12)
-                .background(Color.myButtonColor.opacity(0.1))
-                .cornerRadius(10.0)
-                //.cornerRadius(5.0)*/
         }
         .padding(30)
-        .frame(height: 170, alignment: .topLeading)
+        .frame(height: 180, alignment: .bottomLeading)
         .background(Color.myPrimaryBackground)
         .cornerRadius(20.0)
         .background(

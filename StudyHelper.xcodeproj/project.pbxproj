@@ -12,6 +12,9 @@
 		3766845D26FEA65800F9BF58 /* CourseGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845C26FEA65800F9BF58 /* CourseGridCell.swift */; };
 		3766845F2701664100F9BF58 /* CourseProgressTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3766845E2701664100F9BF58 /* CourseProgressTag.swift */; };
 		376684612702269E00F9BF58 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376684602702269E00F9BF58 /* CourseDetailViewModel.swift */; };
+		3768211A2704EC3900D06EBC /* TemplateCourseGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376821192704EC3900D06EBC /* TemplateCourseGridCell.swift */; };
+		3768211C2704F74100D06EBC /* TemplateCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3768211B2704F74100D06EBC /* TemplateCourseCell.swift */; };
+		3768211E2704FBCC00D06EBC /* TemplateAssignmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3768211D2704FBCC00D06EBC /* TemplateAssignmentRow.swift */; };
 		376A02B326FA7A6C0077297E /* CourseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B226FA7A6C0077297E /* CourseDetail.swift */; };
 		376A02B526FA85220077297E /* CourseDetailNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B426FA85220077297E /* CourseDetailNavigationBar.swift */; };
 		376A02B726FA87F40077297E /* CourseDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376A02B626FA87F40077297E /* CourseDetailHeader.swift */; };
@@ -58,6 +61,9 @@
 		3766845C26FEA65800F9BF58 /* CourseGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseGridCell.swift; sourceTree = "<group>"; };
 		3766845E2701664100F9BF58 /* CourseProgressTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseProgressTag.swift; sourceTree = "<group>"; };
 		376684602702269E00F9BF58 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
+		376821192704EC3900D06EBC /* TemplateCourseGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCourseGridCell.swift; sourceTree = "<group>"; };
+		3768211B2704F74100D06EBC /* TemplateCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCourseCell.swift; sourceTree = "<group>"; };
+		3768211D2704FBCC00D06EBC /* TemplateAssignmentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAssignmentRow.swift; sourceTree = "<group>"; };
 		376A02B226FA7A6C0077297E /* CourseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetail.swift; sourceTree = "<group>"; };
 		376A02B426FA85220077297E /* CourseDetailNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailNavigationBar.swift; sourceTree = "<group>"; };
 		376A02B626FA87F40077297E /* CourseDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailHeader.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 				37B4B3A826F5365200A8FB07 /* DashboardProfileView.swift */,
 				37B4B3A626F5288200A8FB07 /* TimeManager.swift */,
 				37B4B39F26F516D700A8FB07 /* CoursesScrollView.swift */,
+				3768211B2704F74100D06EBC /* TemplateCourseCell.swift */,
 				37B4B3A126F51AC900A8FB07 /* CourseCell.swift */,
 				3766845E2701664100F9BF58 /* CourseProgressTag.swift */,
 			);
@@ -222,6 +229,7 @@
 				37F5B0CE26F6268C00C3BA0A /* AllCoursesHeader.swift */,
 				37F5B0CC26F5AEA400C3BA0A /* AllCoursesGrid.swift */,
 				3766845C26FEA65800F9BF58 /* CourseGridCell.swift */,
+				376821192704EC3900D06EBC /* TemplateCourseGridCell.swift */,
 			);
 			path = AllCourses;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				37DB7F5126FADF2A007B1C0F /* AssignmentList.swift */,
+				3768211D2704FBCC00D06EBC /* TemplateAssignmentRow.swift */,
 				37DB7F5726FB9BF3007B1C0F /* CheckBox.swift */,
 				3714C39C2702779F007A3FD2 /* CustomTabBar.swift */,
 				37DB7F5526FB9467007B1C0F /* AssignmentRow.swift */,
@@ -356,11 +365,13 @@
 				37F5B0F426FA488800C3BA0A /* ToggleButton.swift in Sources */,
 				37F5B0CD26F5AEA400C3BA0A /* AllCoursesGrid.swift in Sources */,
 				37F5B0ED26F942FB00C3BA0A /* AppEnvironment.swift in Sources */,
+				3768211A2704EC3900D06EBC /* TemplateCourseGridCell.swift in Sources */,
 				37F5B0D226F7A71A00C3BA0A /* AddCourseView.swift in Sources */,
 				376A02B726FA87F40077297E /* CourseDetailHeader.swift in Sources */,
 				37F5B0DA26F7DD3600C3BA0A /* InfoSection.swift in Sources */,
 				37DB7F5A26FBA145007B1C0F /* ConditionalModifiers.swift in Sources */,
 				37DB7F5F26FBB61C007B1C0F /* AssignmentsService.swift in Sources */,
+				3768211C2704F74100D06EBC /* TemplateCourseCell.swift in Sources */,
 				37B4B3A526F51B3D00A8FB07 /* Colors.swift in Sources */,
 				3714C39D270277A0007A3FD2 /* CustomTabBar.swift in Sources */,
 				37DB7F6226FBBE9D007B1C0F /* AddAssignmentView.swift in Sources */,
@@ -383,6 +394,7 @@
 				37F5B0DE26F7F13E00C3BA0A /* CallToActionButton.swift in Sources */,
 				37B4B3A726F5288200A8FB07 /* TimeManager.swift in Sources */,
 				37B4B3A926F5365200A8FB07 /* DashboardProfileView.swift in Sources */,
+				3768211E2704FBCC00D06EBC /* TemplateAssignmentRow.swift in Sources */,
 				37B4B38726F50AA100A8FB07 /* StudyHelperApp.swift in Sources */,
 				37F5B0F026FA3DB300C3BA0A /* Banner.swift in Sources */,
 				37F5B0CB26F5AAD400C3BA0A /* AllCoursesView.swift in Sources */,

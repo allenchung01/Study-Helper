@@ -14,16 +14,18 @@ struct AllCoursesView: View {
             ZStack {
                 Color.mySecondaryBackground
                     .ignoresSafeArea()
-                VStack(alignment: .leading, spacing: 30) {
+                VStack(alignment: .leading, spacing: 0) {
                     AllCoursesHeader()
+                        .padding(.top, 40)
+                        .padding(.horizontal, 30)
                     //Divider()
                     ScrollView(.vertical) {
                         AllCoursesGrid()
                     }
-                    .padding(-30)
+                    //.padding(-30)
                 }
                 .frame(maxHeight: .infinity)
-                .padding([.horizontal, .top], 30)
+                //.padding([.horizontal, .top], 30)
                 .navigationBarHidden(true)
                 //.ignoresSafeArea()
                             //.fill(Color.myButtonColor.opacity(0.2))

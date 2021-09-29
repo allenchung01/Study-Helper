@@ -18,13 +18,27 @@ struct AssignmentList: View {
     private var assignments: FetchedResults<Assignment>
     
     var body: some View {
-        VStack(spacing: 20) {
-            let filtered1 = filter(assignments: assignments, by: course)
-            let filtered2 = filter(assignments: filtered1, by: numDays).sorted(by: assignmentSorter(a:b:))
+        let filtered1 = filter(assignments: assignments, by: course)
+        let filtered2 = filter(assignments: filtered1, by: numDays).sorted(by: assignmentSorter(a:b:))
+        return VStack(spacing: 20) {
+            
             /*let filtered2 = filter(assignments: assignments, by: course).sorted(by: assignmentSorter(a:b:))*/
-            ForEach(filtered2, id: \.self) { assignment in
-                AssignmentRow(assignment: assignment)
-                //Text(assignment.name!)
+            if !filtered2.isEmpty {
+                ForEach(filtered2, id: \.self) { assignment in
+                    AssignmentRow(assignment: assignment)
+                    //Text(assignment.name!)
+                }
+            } else {
+                ZStack {
+                    VStack(alignment: .leading, spacing: 20) {
+                        TemplateAssignmentRow(name: "Homework 1", course: "CS 141", dueDate: "Wednesday, Sep 29, 12:00 AM", isCompleted: false, systemImageName: "laptopcomputer")
+                        TemplateAssignmentRow(name: "Worksheet 1", course: "MUS 107", dueDate: "Thursday, Sep 30, 12:00 AM", isCompleted: true, systemImageName: "music.note")
+                    }
+                    .opacity(0.5)
+                    .blur(radius: 3.0)
+                    Text("No Assignments")
+                        .fontWeight(.semibold)
+                }
             }
         }
     }
@@ -54,6 +68,8 @@ struct AssignmentList: View {
             num = 14
         case .oneMonth:
             num = 31
+        case .oneYear:
+            num = 365
         }
         let date = Date()
         return assignments.filter({ assignment in
@@ -92,6 +108,7 @@ struct AssignmentList_Previews: PreviewProvider {
         course.name = "CS 255"
         course.startTime = Date()
         course.endTime = Date()
+        course.systemImageName = "laptopcomputer"
         course.days = [false, true, false, true, false, true, false]
         
         let assignment = Assignment(context: viewContext)

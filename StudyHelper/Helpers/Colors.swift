@@ -14,6 +14,8 @@ extension UIColor {
     static let myTertiaryBackground = #colorLiteral(red: 0.9853127599, green: 0.9854772687, blue: 0.9852910638, alpha: 1)
     static let myButtonColor = #colorLiteral(red: 0, green: 0.5610839128, blue: 1, alpha: 1)
     static let myComplementaryColor = #colorLiteral(red: 0.9332260489, green: 0.9908927083, blue: 0.9757353663, alpha: 1)
+    static let myComplementaryColor2 = #colorLiteral(red: 0.9958586097, green: 0.955921948, blue: 0.9725397229, alpha: 1)
+    static let myComplementaryColor3 = #colorLiteral(red: 0.8983748555, green: 0.9803485274, blue: 0.9911509156, alpha: 1)
 }
 
 extension Color {
@@ -23,4 +25,6 @@ extension Color {
     static let myTertiaryBackground = Color(.myTertiaryBackground)
     static let myButtonColor = Color(.myButtonColor)
     static let myComplementaryColor = Color(.myComplementaryColor)
+    static let myComplementaryColor2 = Color(.myComplementaryColor2)
+    static let myComplementaryColor3 = Color(.myComplementaryColor3)
 }

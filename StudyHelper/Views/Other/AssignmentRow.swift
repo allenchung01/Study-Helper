@@ -83,6 +83,7 @@ struct AssignmentRow: View {
                         }
                     })
             )
+                if assignment.course != nil {
             if !assignment.course!.systemImageName!.isEmpty {
                 VStack {
                     HStack {
@@ -97,6 +98,7 @@ struct AssignmentRow: View {
                     }
                 }
             }
+                }
             }
         }
     }

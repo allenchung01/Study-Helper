@@ -18,8 +18,21 @@ struct CoursesScrollView: View {
         ScrollView(.horizontal) {
             HStack(spacing: 20) {
                 let filteredCourses = filterCoursesByDate(courses: courses)
-                ForEach(filteredCourses, id: \.self) { course in
-                    CourseCell(course: course)
+                if filteredCourses.count != 0 {
+                    ForEach(filteredCourses, id: \.self) { course in
+                        CourseCell(course: course)
+                    }
+                } else {
+                    ZStack {
+                        HStack(alignment: .center, spacing: 20) {
+                            TemplateCourseCell(name: "CS 141", systemImageName: "laptopcomputer", startTime: "1:00 PM", endTime: "1:50 PM", progress: .awaitingStart)
+                            TemplateCourseCell(name: "MUS 107", systemImageName: "music.note", startTime: "3:00 PM", endTime: "3:50 PM", progress: .awaitingStart)
+                        }
+                        .opacity(0.5)
+                        .blur(radius: 3.0)
+                        Text("No Courses Today")
+                            .fontWeight(.semibold)
+                    }
                 }
             }
             .padding(30)

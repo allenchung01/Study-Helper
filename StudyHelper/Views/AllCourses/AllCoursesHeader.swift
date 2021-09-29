@@ -14,14 +14,20 @@ struct AllCoursesHeader: View {
     @State private var isAddingCourse = false
     
     var body: some View {
-        HStack {
-            Text("All Courses")
-                .fontWeight(.semibold)
-                .font(.title)
-            Spacer()
-            Button(action: handleAddCourseButton) {
-                Image(systemName: "plus")
+        VStack(alignment: .leading, spacing: 0) {
+            HStack {
+                Text("All Courses")
+                    .fontWeight(.semibold)
+                    .font(.title)
+                Spacer()
+                Button(action: handleAddCourseButton) {
+                    Image(systemName: "plus")
+                }
             }
+            .padding(.bottom, 20)
+            Rectangle()
+                .fill(Color.myTertiaryBackground)
+                .frame(height: 1)
         }
         .sheet(isPresented: $isAddingCourse) {
             AddCourseView(isPresented: $isAddingCourse)
