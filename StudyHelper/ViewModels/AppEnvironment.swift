@@ -17,6 +17,9 @@ class AppEnvironment: ObservableObject {
     @Published var isDisplayingAddAssignmentSuccessBanner = false
     @Published var isDisplayingAddAssignmentErrorBanner = false
     
+    @Published var isDisplayingAddExamSuccessBanner = false
+    @Published var isDisplayingAddExamErrorBanner = false
+    
     var subText: String = ""
     
     enum BannerType {
@@ -24,6 +27,8 @@ class AppEnvironment: ObservableObject {
         case addCourseError
         case addAssignmentSuccess
         case addAssignmentError
+        case addExamSuccess
+        case addExamError
     }
     
     func displayBanner(bannerType: BannerType, subText: String) {
@@ -52,6 +57,18 @@ class AppEnvironment: ObservableObject {
             let seconds = 2.0
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.isDisplayingAddAssignmentErrorBanner = false
+            }
+        case .addExamSuccess:
+            isDisplayingAddExamSuccessBanner = true
+            let seconds = 2.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.isDisplayingAddExamSuccessBanner = false
+            }
+        case .addExamError:
+            isDisplayingAddExamErrorBanner = true
+            let seconds = 2.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.isDisplayingAddExamErrorBanner = false
             }
         }
     }

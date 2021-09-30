@@ -1,19 +1,19 @@
 //
-//  AssignmentRow.swift
+//  ExamCell.swift
 //  StudyHelper
 //
-//  Created by Allen Chung on 9/22/21.
+//  Created by Allen Chung on 9/30/21.
 //
 
 import SwiftUI
 
-struct AssignmentRow: View {
+struct ExamCell: View {
     @Environment(\.managedObjectContext) var viewContext
-    @ObservedObject var assignment: Assignment
+    @ObservedObject var exam: Exam
     
     @State private var offset: CGFloat = 0.0
     
-    private let assignmentsService = AssignmentsService()
+    private let examService = ExamService()
     
     var body: some View {
         ZStack {
@@ -29,33 +29,25 @@ struct AssignmentRow: View {
             .cornerRadius(15.0)
             // Actual Cell
             ZStack {
-            if assignment.name != nil {
+            if exam.name != nil {
             HStack(alignment: .center, spacing: 0) {
                 VStack(alignment: .leading, spacing: 3) {
-                    if !assignment.isFault && assignment.course != nil {
+                    if !exam.isFault && exam.course != nil {
                         HStack(alignment: .center, spacing: 10) {
-                            Text(assignment.course!.name!)
+                            Text(exam.course!.name!)
                                 .font(.subheadline)
                         }
                         .foregroundColor(.secondary)
                         HStack(spacing: 10) {
-                            Text(assignment.name!)
+                            Text(exam.name!)
                                 .fontWeight(.semibold)
-                                .if(assignment.isCompleted, transform: {
+                                .if(exam.date! < Date(), transform: {
                                     $0.strikethrough()
                                 })
-                            CheckBox(selected: assignment.isCompleted, onToggle: {
-                                assignment.isCompleted.toggle()
-                                saveContext()
-                            })
                         }
-                        let date = Date()
-                        let daysUntilDue = Calendar.current.numberOfDaysBetween(from: date, to: assignment.dueDate!)
-                        Text(TimeManager.dueDate(from: assignment.dueDate!))
+                        Text(TimeManager.dueDate(from: exam.date!))
                             .font(.caption)
-                            .foregroundColor(
-                                daysUntilDue >= 0 || assignment.isCompleted == true ? .secondary : .myErrorRed
-                            )
+                            .foregroundColor(.secondary)
                             .fontWeight(.light)
                     }
                 }
@@ -76,22 +68,22 @@ struct AssignmentRow: View {
                     .onEnded({ value in
                         let width = value.translation.width
                         if width < -160 {
-                            assignmentsService.deleteAssignment(assignment: assignment, viewContext: viewContext)
+                            examService.deleteExam(exam: exam, viewContext: viewContext)
                         } else {
                             offset = 0
                         }
                     })
             )
-                if assignment.course != nil {
-            if !assignment.course!.systemImageName!.isEmpty {
+                if exam.course != nil {
+            if !exam.course!.systemImageName!.isEmpty {
                 VStack {
                     HStack {
                         Spacer()
-                        Image(systemName: assignment.course!.systemImageName!)
+                        Image(systemName: exam.course!.systemImageName!)
                             .font(.caption2)
                             .frame(width: 36, height: 36)
                             //.padding(0)
-                            .background(Color.myComplementaryColor3)
+                            .background(Color.myComplementaryColor4)
                             .cornerRadius(10.0)
                             .padding(30)
                     }
@@ -113,21 +105,20 @@ struct AssignmentRow: View {
     }
 }
 
-struct AssignmentRow_Previews: PreviewProvider {
+struct ExamCell_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PersistenceController.preview.container.viewContext
-        let assignment = Assignment(context: viewContext)
-        assignment.name = "Homework 1"
-        assignment.dueDate = Date()
-        assignment.isCompleted = false
-        assignment.timestamp = Date()
+        let exam = Exam(context: viewContext)
+        exam.name = "Midterm 1"
+        exam.date = Date()
+        exam.timestamp = Date()
         
         let course = Course(context: viewContext)
         course.name = "CS 255"
         course.systemImageName = "laptopcomputer"
-        assignment.course = course
+        exam.course = course
         
-        return AssignmentRow(assignment: assignment)
+        return ExamCell(exam: exam)
             .padding(30)
             .background(Color.mySecondaryBackground)
             .previewLayout(.sizeThatFits)

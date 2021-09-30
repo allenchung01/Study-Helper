@@ -15,12 +15,6 @@ struct CourseDetailHeader: View {
         let endTimeText = TimeManager.timeFromDate(date: course.endTime!)
         HStack(alignment: .center, spacing: 0) {
             VStack(alignment: .leading, spacing: 3) {
-                HStack(alignment: .center, spacing: 0) {
-                    Text(course.name!)
-                        .fontWeight(.semibold)
-                        .font(.title)
-                    Spacer()
-                }
                 HStack(spacing: 10) {
                     course.days![0] == true ? Text("Sun").fontWeight(.light) : nil
                     course.days![1] == true ? Text("Mon").fontWeight(.light) : nil
@@ -32,6 +26,12 @@ struct CourseDetailHeader: View {
                 }
                 .foregroundColor(.secondary)
                 .font(.subheadline)
+                HStack(alignment: .center, spacing: 0) {
+                    Text(course.name!)
+                        .fontWeight(.semibold)
+                        .font(.title)
+                    Spacer()
+                }
                 HStack(alignment: .center, spacing: 10) {
                     //Image(systemName: "clock")
                     Text(startTimeText)
@@ -46,11 +46,11 @@ struct CourseDetailHeader: View {
             }
             .padding(.top, 10)
             Image(systemName: course.systemImageName!)
-                .frame(width: 60, height: 60)
-                .font(.title2)
+                .frame(width: 50, height: 50)
+                //.font(.title3)
                 .background(Color.myComplementaryColor)
                 .cornerRadius(10.0)
-                .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
+                //.shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         }
     }
 }

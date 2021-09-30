@@ -31,6 +31,10 @@ struct PersistenceController {
         assignment2.timestamp = Date()
         assignment2.dueDate = Calendar.current.date(bySettingHour: 22, minute: 30, second: 0, of: Date())!
         assignment2.isCompleted = true
+        let exam = Exam(context: viewContext)
+        exam.name = "Midterm 1"
+        exam.date = Calendar.current.date(bySettingHour: 1, minute: 30, second: 0, of: Date())!
+        course.exams = [exam]
         course.assignments = [assignment, assignment2]
         
         let course2 = Course(context: viewContext)

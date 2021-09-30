@@ -13,6 +13,7 @@ struct CourseDetail: View {
     var course: Course
     
     @State private var isShowingAddAssignmentView = false
+    @State private var isShowingAddExamView = false
     @State private var numDays: NumDays = .allAssignments
     
     var body: some View {
@@ -25,6 +26,14 @@ struct CourseDetail: View {
                 VStack(alignment: .leading, spacing: 40) {
                     CourseDetailNavigationBar(course: course)
                     CourseDetailHeader(course: course)
+                        .background(
+                            Color.myTertiaryBackground
+                                //.cornerRadius(40.0, corners: [.bottomLeft, .bottomRight])
+                                .padding(-30)
+                                
+                        )
+                        .padding(.bottom, 30)
+                        .padding(.top, 10)
                     /*VStack(alignment: .leading, spacing: 20) {
                         Text("Info")
                             .fontWeight(.semibold)
@@ -48,13 +57,19 @@ struct CourseDetail: View {
                         
                     }
                     
-                    Text("Quizzes/ Tests")
-                        .fontWeight(.semibold)
-                        .font(.title2)
-                    
-                    Text("Links")
-                        .fontWeight(.semibold)
-                        .font(.title2)
+                    VStack(alignment: .leading, spacing: 20) {
+                        HStack(alignment: .center, spacing: 0) {
+                            Text("Exams/ Quizzes")
+                                .fontWeight(.semibold)
+                                .font(.title2)
+                            Spacer()
+                            Button(action: handleAddExamButton) {
+                                Image(systemName: "plus")
+                            }
+                        }
+                        ExamsList(course: course, numDays: $numDays)
+                    }
+                    .padding(.bottom, 20)
                     
                     Spacer()
                 }
@@ -65,12 +80,20 @@ struct CourseDetail: View {
                 AddAssignmentView(course: course, isPresented: $isShowingAddAssignmentView)
                     .environmentObject(appEnvironment)
             }
+            .sheet(isPresented: $isShowingAddExamView) {
+                AddExamView(course: course, isPresented: $isShowingAddExamView)
+                    .environmentObject(appEnvironment)
+            }
             }
         }
     }
     
     func handleAddAssignmentButton() {
         isShowingAddAssignmentView = true
+    }
+    
+    func handleAddExamButton() {
+        isShowingAddExamView = true
     }
 }
 

@@ -16,6 +16,7 @@ extension UIColor {
     static let myComplementaryColor = #colorLiteral(red: 0.9332260489, green: 0.9908927083, blue: 0.9757353663, alpha: 1)
     static let myComplementaryColor2 = #colorLiteral(red: 0.9958586097, green: 0.955921948, blue: 0.9725397229, alpha: 1)
     static let myComplementaryColor3 = #colorLiteral(red: 0.8983748555, green: 0.9803485274, blue: 0.9911509156, alpha: 1)
+    static let myComplementaryColor4 = #colorLiteral(red: 0.8852431178, green: 0.8909566402, blue: 0.9979204535, alpha: 1)
     static let myErrorRed = #colorLiteral(red: 1, green: 0.6420148015, blue: 0.6365351081, alpha: 1)
 }
 
@@ -28,5 +29,6 @@ extension Color {
     static let myComplementaryColor = Color(.myComplementaryColor)
     static let myComplementaryColor2 = Color(.myComplementaryColor2)
     static let myComplementaryColor3 = Color(.myComplementaryColor3)
+    static let myComplementaryColor4 = Color(.myComplementaryColor4)
     static let myErrorRed = Color(.myErrorRed)
 }

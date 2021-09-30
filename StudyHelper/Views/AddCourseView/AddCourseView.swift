@@ -53,6 +53,7 @@ struct AddCourseView: View {
                 if vm.addCourse(name: courseName, startTime: startTime, endTime: endTime, days: days, selectedImageName: selectedImage, viewContext: viewContext) {
                     appEnvironment.displayBanner(bannerType: .addCourseSuccess, subText: courseName)
                     //presentationMode.wrappedValue.dismiss()
+                    
                     isPresented = false
                 } else {
                     appEnvironment.displayBanner(bannerType: .addCourseError, subText: "Please complete all fields.")

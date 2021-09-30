@@ -14,6 +14,9 @@ class CourseDataViewModel {
         for assign in course.assignments!.allObjects {
             viewContext.delete(assign as! NSManagedObject)
         }
+        for exam in course.exams!.allObjects {
+            viewContext.delete(exam as! NSManagedObject)
+        }
         viewContext.delete(course)
         saveContext(viewContext: viewContext)
     }
