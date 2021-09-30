@@ -21,6 +21,7 @@ struct AddExamHeader: View {
             }
             Spacer()
             Image(systemName: "hourglass")
+                .foregroundColor(.black)
                 .frame(width: 40, height: 40)
                 .background(Color.myComplementaryColor4)
                 .font(.caption)

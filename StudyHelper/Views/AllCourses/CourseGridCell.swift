@@ -23,6 +23,7 @@ struct CourseGridCell: View {
             VStack(alignment: .leading, spacing: 3) {
                 if !course.systemImageName!.isEmpty {
                     Image(systemName: course.systemImageName!)
+                        .foregroundColor(.black)
                         .font(.caption)
                         .frame(width: 40, height: 40)
                         //.padding(10)

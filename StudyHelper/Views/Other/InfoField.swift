@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct InfoField: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var text: String
     var fieldName: String
     var placeholder: String
@@ -27,8 +28,8 @@ struct InfoField: View {
                 Image(systemName: systemImageName!)
                     .frame(width: 40, height: 40)
                     .font(.caption)
-                    .foregroundColor(.black)
-                    .background(Color.white)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
+                    .background(colorScheme == .light ? Color.myPrimaryBackground : Color.myTertiaryBackground)
                     .cornerRadius(10.0)
                     .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
             }

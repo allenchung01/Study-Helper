@@ -9,9 +9,12 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) private var viewContext
     
     @EnvironmentObject var appEnvironment: AppEnvironment
+    
+    @State private var isDisplayingOnboardScreen = false
 
     let gradient = Gradient(colors: [.orange, .white.opacity(0)])
     
@@ -38,7 +41,7 @@ struct ContentView: View {
             .accentColor(.black)
              */
             CustomTabBar()
-                .accentColor(.black)
+                .accentColor(colorScheme == .light ? .black : .white)
             
             if appEnvironment.isDisplayingAddCourseSuccessBanner {
                 //Banner(text: "Course Added!", color: .systemBlue)
@@ -53,6 +56,16 @@ struct ContentView: View {
                 Banner(text: "Exam Added:", color: .myComplementaryColor4, subText: appEnvironment.subText,  systemImageName: "hourglass")
             }
         }
+        .onAppear {
+            if !UserDefaults.standard.bool(forKey: "didLaunchBefore") {
+                isDisplayingOnboardScreen = true
+                //UserDefaults.standard.set("Allen", forKey: "name")
+            }
+        }
+        .sheet(isPresented: $isDisplayingOnboardScreen) {
+            EnterNameScreen(isPresented: $isDisplayingOnboardScreen)
+        }
+
     }
 
     /*private func addItem() {

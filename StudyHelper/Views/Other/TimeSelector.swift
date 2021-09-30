@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TimeSelector: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var time: Date
     var fieldName: String
     var systemImageName: String?
@@ -43,8 +44,8 @@ struct TimeSelector: View {
                 Image(systemName: systemImageName!)
                     .frame(width: 40, height: 40)
                     .font(.caption)
-                    .foregroundColor(.black)
-                    .background(Color.white)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
+                    .background(colorScheme == .light ? Color.myPrimaryBackground : Color.myTertiaryBackground)
                     .cornerRadius(10.0)
                     .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
             }

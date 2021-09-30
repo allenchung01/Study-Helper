@@ -21,6 +21,12 @@ class CourseDataViewModel {
         saveContext(viewContext: viewContext)
     }
     
+    func deleteAllCourses(courses: [Course], viewContext: NSManagedObjectContext) {
+        for course in courses {
+            deleteCourse(course: course, viewContext: viewContext)
+        }
+    }
+    
     private func saveContext(viewContext: NSManagedObjectContext) {
         do {
             try viewContext.save()

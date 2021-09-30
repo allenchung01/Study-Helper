@@ -21,6 +21,7 @@ struct AddAssignmentHeader: View {
             }
             Spacer()
             Image(systemName: "paperclip")
+                .foregroundColor(.black)
                 .frame(width: 40, height: 40)
                 .background(Color.myComplementaryColor3)
                 .font(.caption)

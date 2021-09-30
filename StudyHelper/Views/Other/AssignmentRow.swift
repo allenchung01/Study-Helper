@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AssignmentRow: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) var viewContext
     @ObservedObject var assignment: Assignment
     
@@ -88,6 +89,7 @@ struct AssignmentRow: View {
                     HStack {
                         Spacer()
                         Image(systemName: assignment.course!.systemImageName!)
+                            .foregroundColor(.black)
                             .font(.caption2)
                             .frame(width: 36, height: 36)
                             //.padding(0)

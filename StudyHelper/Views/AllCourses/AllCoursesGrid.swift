@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AllCoursesGrid: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var appEnvironment: AppEnvironment
     @Environment(\.managedObjectContext) var viewContext
     
@@ -35,6 +36,7 @@ struct AllCoursesGrid: View {
                 HStack(alignment: .center, spacing: 20) {
                     Image(systemName: "folder")
                         .font(.caption2)
+                        .foregroundColor(.black)
                         .frame(width: 36, height: 36)
                         .background(Color.myComplementaryColor2)
                         .cornerRadius(10.0)
@@ -51,6 +53,7 @@ struct AllCoursesGrid: View {
                 HStack(alignment: .center, spacing: 20) {
                     Image(systemName: "paperclip")
                         .font(.caption2)
+                        .foregroundColor(.black)
                         .frame(width: 36, height: 36)
                         .background(Color.myComplementaryColor3)
                         .cornerRadius(10.0)
@@ -92,7 +95,7 @@ struct AllCoursesGrid: View {
                         isAddingCourse = true
                     }) {
                         ZStack {
-                            RadialGradient(colors: [.blue.opacity(0.5), .white.opacity(0)], center: .center, startRadius: 0, endRadius: 200)
+                            RadialGradient(colors: [.myButtonColor.opacity(0.5), .white.opacity(0)], center: .center, startRadius: 0, endRadius: 200)
                             VStack(alignment: .center, spacing: 20) {
                                 Image(systemName: "plus")
                                     .font(.title2)

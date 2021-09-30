@@ -21,6 +21,7 @@ struct AddCourseHeader: View {
             }
             Spacer()
             Image(systemName: "folder")
+                .foregroundColor(.black)
                 .font(.caption)
                 .frame(width: 40, height: 40)
                 .background(Color.myComplementaryColor2)

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CourseDetailHeader: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var course: Course
     
     var body: some View {
@@ -47,6 +49,7 @@ struct CourseDetailHeader: View {
             .padding(.top, 10)
             Image(systemName: course.systemImageName!)
                 .frame(width: 50, height: 50)
+                .foregroundColor(.black)
                 //.font(.title3)
                 .background(Color.myComplementaryColor)
                 .cornerRadius(10.0)

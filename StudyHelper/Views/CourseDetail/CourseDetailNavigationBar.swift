@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CourseDetailNavigationBar: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var viewContext
     
@@ -19,7 +20,7 @@ struct CourseDetailNavigationBar: View {
         HStack {
             Button(action: dismissView) {
                 Image(systemName: "arrow.left")
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
             }
             Spacer()
             Menu(content: {
@@ -43,7 +44,7 @@ struct CourseDetailNavigationBar: View {
                 }
             }, label: {
                 Image(systemName: "gear")
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .light ? .black : .white)
             })
         }
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WeekDaySelector: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selectedDays: [Bool]
     
     var body: some View {
@@ -47,8 +48,8 @@ struct WeekDaySelector: View {
             Image(systemName: "calendar")
                 .frame(width: 40, height: 40)
                 .font(.caption)
-                .foregroundColor(.black)
-                .background(Color.white)
+                .foregroundColor(colorScheme == .light ? .black : .white)
+                .background(colorScheme == .light ? Color.myPrimaryBackground : Color.myTertiaryBackground)
                 .cornerRadius(10.0)
                 .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         }

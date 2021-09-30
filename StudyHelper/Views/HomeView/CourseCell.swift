@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CourseCell: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     private var course: Course
     private var startTimeString: String
     private var endTimeString: String
@@ -24,6 +26,7 @@ struct CourseCell: View {
                 VStack(alignment: .leading, spacing: 10) {
                     if !course.systemImageName!.isEmpty {
                         Image(systemName: course.systemImageName!)
+                            .foregroundColor(.black)
                             .font(.caption)
                             .frame(width: 40, height: 40)
                             //.padding(10)

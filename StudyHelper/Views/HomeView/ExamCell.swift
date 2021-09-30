@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExamCell: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) var viewContext
     @ObservedObject var exam: Exam
     
@@ -81,6 +82,7 @@ struct ExamCell: View {
                         Spacer()
                         Image(systemName: exam.course!.systemImageName!)
                             .font(.caption2)
+                            .foregroundColor(.black)
                             .frame(width: 36, height: 36)
                             //.padding(0)
                             .background(Color.myComplementaryColor4)

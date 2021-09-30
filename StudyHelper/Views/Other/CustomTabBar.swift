@@ -14,6 +14,7 @@ enum Tab {
 }
 
 struct CustomTabBar: View {
+    @Environment(\.colorScheme) var colorScheme
     
     @State var currentTab: Tab = .home
     
@@ -23,7 +24,8 @@ struct CustomTabBar: View {
                 .ignoresSafeArea()
             switch currentTab {
             case .home:
-                HomeView(name: "Allen")
+                let name = UserDefaults.standard.string(forKey: "name")
+                HomeView(name: name ?? "User")
             case .allCourses:
                 AllCoursesView()
             case .profile:
@@ -44,9 +46,9 @@ struct CustomTabBar: View {
                 Button(action: {currentTab = .home} ) {
                     VStack(alignment: .center, spacing: 20) {
                         Image(systemName: "house")
-                            .foregroundColor(.black)
+                            .foregroundColor(colorScheme == .light ? .black : .white)
                         Circle()
-                            .fill(currentTab == .home ? .black : .mySecondaryBackground)
+                            .fill(currentTab == .home ? (colorScheme == .light ? .black : .white) : .mySecondaryBackground)
                             .frame(width: 6, height: 6)
                     }
                 }
@@ -54,9 +56,9 @@ struct CustomTabBar: View {
                 Button(action: {currentTab = .allCourses} ) {
                     VStack(alignment: .center, spacing: 20) {
                         Image(systemName: "folder")
-                            .foregroundColor(.black)
+                            .foregroundColor(colorScheme == .light ? .black : .white)
                         Circle()
-                            .fill(currentTab == .allCourses ? .black : .mySecondaryBackground)
+                            .fill(currentTab == .allCourses ? (colorScheme == .light ? .black : .white) : .mySecondaryBackground)
                             .frame(width: 6, height: 6)
                     }
                 }

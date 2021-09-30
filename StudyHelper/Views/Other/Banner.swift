@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Banner: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var text: String
     var color: UIColor
     var subText: String?
@@ -35,12 +37,13 @@ struct Banner: View {
                         .frame(width: 36, height: 36)
                         .background(Color(color))
                         .cornerRadius(10.0)
+                        .foregroundColor(.black)
                 }
             }
             .frame(maxWidth: .infinity)
             .padding(30)
-            .background(Color.white)
-            .foregroundColor(.black)
+            .background(colorScheme == .light ? Color.myPrimaryBackground : Color.myTertiaryBackground)
+            .foregroundColor(colorScheme == .light ? .black : .white)
             .cornerRadius(20.0)
             .padding(30)
             .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)

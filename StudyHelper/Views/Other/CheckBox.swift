@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CheckBox: View {
+    @Environment(\.colorScheme) var colorScheme
     
     var selected: Bool
     var onToggle: () -> Void
@@ -15,7 +16,7 @@ struct CheckBox: View {
     var body: some View {
         Button(action: toggleButton) {
             Image(systemName: selected ? "checkmark.circle.fill" : "circle")
-                .foregroundColor(.black)
+                .foregroundColor(colorScheme == .light ? .black : .white)
         }
     }
     
