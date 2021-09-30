@@ -13,7 +13,7 @@ enum NumDays: String {
     case oneWeek = "One Week"
     case twoWeeks = "Two Weeks"
     case oneMonth = "One Month"
-    case oneYear = "One Year"
+    case allAssignments = "All Assignments"
 }
 
 struct DueSoonHeader: View {
@@ -37,7 +37,7 @@ struct DueSoonHeader: View {
                     Text("One Week").tag(NumDays.oneWeek)
                     Text("Two Weeks").tag(NumDays.twoWeeks)
                     Text("One Month").tag(NumDays.oneMonth)
-                    Text("One Year").tag(NumDays.oneYear)
+                    Text("All Assignments").tag(NumDays.allAssignments)
                 }
                 .pickerStyle(MenuPickerStyle())
                 Image(systemName: "chevron.down")

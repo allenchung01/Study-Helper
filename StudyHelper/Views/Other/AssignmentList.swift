@@ -68,17 +68,26 @@ struct AssignmentList: View {
             num = 14
         case .oneMonth:
             num = 31
-        case .oneYear:
-            num = 365
+        case .allAssignments:
+            return assignments
         }
         let date = Date()
         return assignments.filter({ assignment in
             let dueDate = assignment.dueDate!
             let days = Calendar.current.numberOfDaysBetween(from: date, to: dueDate)
             if days <= num {
+                if days < 0 {
+                    // Assignment is past due date
+                    if assignment.isCompleted == false {
+                        return true
+                    } else  {
+                        return false
+                    }
+                }
                 return true
+            } else {
+                return false
             }
-            return false
         })
     }
     

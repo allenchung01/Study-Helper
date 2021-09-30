@@ -42,11 +42,11 @@ struct ContentView: View {
             
             if appEnvironment.isDisplayingAddCourseSuccessBanner {
                 //Banner(text: "Course Added!", color: .systemBlue)
-                Banner(text: "Course Added:", color: UIColor.systemBlue, subText: appEnvironment.subText,  systemImageName: "rectangle.fill.badge.checkmark")
+                Banner(text: "Course Added:", color: .myComplementaryColor2, subText: appEnvironment.subText,  systemImageName: "rectangle.fill.badge.checkmark")
             }
             if appEnvironment.isDisplayingAddAssignmentSuccessBanner {
                 //Banner(text: "Assignment Added!", color: .systemBlue)
-                Banner(text: "Assignment Added:", color: UIColor.systemBlue, subText: appEnvironment.subText,  systemImageName: "rectangle.fill.badge.checkmark")
+                Banner(text: "Assignment Added:", color: .myComplementaryColor3, subText: appEnvironment.subText,  systemImageName: "rectangle.fill.badge.checkmark")
             }
         }
     }

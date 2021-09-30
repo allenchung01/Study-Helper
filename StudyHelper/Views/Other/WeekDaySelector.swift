@@ -12,16 +12,13 @@ struct WeekDaySelector: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Image(systemName: "calendar")
-                .font(.caption)
-                .foregroundColor(.secondary)
-            VStack(alignment: .leading, spacing: 3) {
-                Text("Days")
-                    .bold()
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Select Days")
+                    .fontWeight(.light)
                     .font(.caption)
                     .foregroundColor(.secondary)
                 ScrollView(.horizontal) {
-                    HStack(alignment: .center, spacing: 10) {
+                    HStack(alignment: .center, spacing: 20) {
                         ToggleButton(text: "Sun") {
                             selectedDays[0].toggle()
                         }
@@ -46,10 +43,18 @@ struct WeekDaySelector: View {
                     }
                 }
             }
+            Spacer()
+            Image(systemName: "calendar")
+                .frame(width: 40, height: 40)
+                .font(.caption)
+                .foregroundColor(.black)
+                .background(Color.white)
+                .cornerRadius(10.0)
+                .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         }
-        .padding(20)
+        /*.padding(20)
         .background(Color.myTertiaryBackground)
-        .cornerRadius(10.0)
+        .cornerRadius(10.0)*/
     }
 }
 

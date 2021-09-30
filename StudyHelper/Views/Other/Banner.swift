@@ -18,21 +18,29 @@ struct Banner: View {
             HStack(alignment: .center, spacing: 0) {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(text)
-                        .bold()
+                        .font(.body)
+                        .fontWeight(.semibold)
                     if subText != nil {
                         Text(subText!)
+                            .foregroundColor(.secondary)
+                            .fontWeight(.light)
                             .font(.subheadline)
+                            
                     }
                 }
                 Spacer()
                 if systemImageName != nil {
                     Image(systemName: systemImageName!)
+                        .font(.caption2)
+                        .frame(width: 36, height: 36)
+                        .background(Color(color))
+                        .cornerRadius(10.0)
                 }
             }
             .frame(maxWidth: .infinity)
             .padding(30)
-            .background(Color(color).opacity(0.9))
-            .foregroundColor(.white)
+            .background(Color.white)
+            .foregroundColor(.black)
             .cornerRadius(20.0)
             .padding(30)
             .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)

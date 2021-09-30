@@ -13,7 +13,7 @@ struct CourseDetail: View {
     var course: Course
     
     @State private var isShowingAddAssignmentView = false
-    @State private var numDays: NumDays = .oneYear
+    @State private var numDays: NumDays = .allAssignments
     
     var body: some View {
         return ZStack {
@@ -22,30 +22,21 @@ struct CourseDetail: View {
             
             if course.name != nil {
             ScrollView {
-                VStack(alignment: .leading, spacing: 30) {
+                VStack(alignment: .leading, spacing: 40) {
                     CourseDetailNavigationBar(course: course)
                     CourseDetailHeader(course: course)
+                    /*VStack(alignment: .leading, spacing: 20) {
+                        Text("Info")
+                            .fontWeight(.semibold)
+                            .font(.title2)
+                        Text(TimeManager.timeFromDate(date: course.startTime!))
+                        Text(TimeManager.timeFromDate(date: course.endTime!))
+                    }*/
                     
-                    Text("Info")
-                        .bold()
-                        .font(.title2)
-                    Text(TimeManager.timeFromDate(date: course.startTime!))
-                    Text(TimeManager.timeFromDate(date: course.endTime!))
-                    
-                    HStack {
-                        course.days![0] == true ? Text("Sun") : nil
-                        course.days![1] == true ? Text("Mon") : nil
-                        course.days![2] == true ? Text("Tue") : nil
-                        course.days![3] == true ? Text("Wed") : nil
-                        course.days![4] == true ? Text("Thu") : nil
-                        course.days![5] == true ? Text("Fri") : nil
-                        course.days![6] == true ? Text("Sat") : nil
-                    }
-                    
-                    Group {
+                    VStack(alignment: .leading, spacing: 20) {
                         HStack(alignment: .center, spacing: 0) {
                             Text("Assignments")
-                                .bold()
+                                .fontWeight(.semibold)
                                 .font(.title2)
                             Spacer()
                             Button(action: handleAddAssignmentButton) {
@@ -58,11 +49,11 @@ struct CourseDetail: View {
                     }
                     
                     Text("Quizzes/ Tests")
-                        .bold()
+                        .fontWeight(.semibold)
                         .font(.title2)
                     
                     Text("Links")
-                        .bold()
+                        .fontWeight(.semibold)
                         .font(.title2)
                     
                     Spacer()
@@ -92,6 +83,7 @@ struct CourseDetail_Previews: PreviewProvider {
         course.startTime = Date()
         course.endTime = Date()
         course.days = [false, true, false, true, false, true, false]
+        course.systemImageName = "laptopcomputer"
         return CourseDetail(course: course)
     }
 }

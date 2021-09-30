@@ -30,7 +30,7 @@ struct AddAssignmentView: View {
                     AddAssignmentHeader()
                     Divider()
                     InfoSection(title: "Assignment Info") {
-                        InfoField(text: $assignmentName, fieldName: "Assignment Name", placeholder: "e.g. Homework 1", systemImageName: "paperclip.circle")
+                        InfoField(text: $assignmentName, fieldName: "Assignment Name", placeholder: "e.g. Homework 1", systemImageName: "paperclip")
                     }
                     InfoSection(title: "Deadline") {
                         TimeSelector(time: $dueDate, fieldName: "Due Date", systemImageName: "calendar", isFullDate: true)
@@ -49,7 +49,7 @@ struct AddAssignmentView: View {
                 }
             }
             if appEnvironment.isDisplayingAddAssignmentErrorBanner {
-                Banner(text: "Error:", color: UIColor.systemRed, subText: "Please complete all fields.", systemImageName: "exclamationmark.circle.fill")
+                Banner(text: "Error:", color: .myErrorRed, subText: "Please complete all fields.", systemImageName: "exclamationmark.circle.fill")
             }
         }
     }
@@ -60,5 +60,7 @@ struct AddAssignmentView_Previews: PreviewProvider {
         let viewContext = PersistenceController.preview.container.viewContext
         let course = Course(context: viewContext)
         AddAssignmentView(course: course, isPresented: .constant(true))
+            .environment(\.managedObjectContext, viewContext)
+            .environmentObject(AppEnvironment())
     }
 }

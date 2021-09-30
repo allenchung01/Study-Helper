@@ -17,10 +17,10 @@ struct ToggleButton: View {
         Button(action: toggleButton) {
             Text(text)
                 .font(.caption)
-                .padding(10)
-                .background(selected ? Color.myButtonColor : Color(.systemGray5))
+                .frame(width: 40, height: 40)
+                .background(selected ? Color.myComplementaryColor : Color.myTertiaryBackground)
                 .cornerRadius(10.0)
-                .foregroundColor(Color.mySecondaryBackground)
+                .foregroundColor(selected ? .black : .secondary)
         }
     }
     

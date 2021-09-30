@@ -13,15 +13,21 @@ struct AddCourseHeader: View {
             VStack(alignment: .leading) {
                 Text("Add a")
                     .fontWeight(.light)
-                    .font(.title)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 Text("New Course")
-                    .bold()
                     .font(.title)
+                    .fontWeight(.semibold)
             }
             Spacer()
-            Image(systemName: "folder.fill.badge.plus")
-                .font(.title)
+            Image(systemName: "folder")
+                .font(.caption)
+                .frame(width: 40, height: 40)
+                .background(Color.myComplementaryColor2)
+                .cornerRadius(10.0)
+                .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         }
+        .padding(.top, 10)
     }
 }
 

@@ -16,10 +16,10 @@ struct CallToActionButton: View {
             Spacer()
             Button(action: action) {
                 Text(text)
-                    .bold()
+                    .fontWeight(.semibold)
                     .padding(20)
                     .frame(maxWidth: .infinity)
-                    .background(Color.myButtonColor)
+                    .background(Color.blue.opacity(0.9))
                     .foregroundColor(.white)
                     .cornerRadius(20.0)
                     .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)

@@ -15,22 +15,27 @@ struct InfoField: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            if systemImageName != nil {
-                Image(systemName: systemImageName!)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-            VStack(alignment: .leading, spacing: 3) {
+            VStack(alignment: .leading, spacing: 10) {
                 Text(fieldName)
-                    .bold()
+                    .fontWeight(.light)
                     .font(.caption)
                     .foregroundColor(.secondary)
                 TextField(placeholder, text: $text)
+                    .font(Font.body.weight(.semibold))
+            }
+            if systemImageName != nil {
+                Image(systemName: systemImageName!)
+                    .frame(width: 40, height: 40)
+                    .font(.caption)
+                    .foregroundColor(.black)
+                    .background(Color.white)
+                    .cornerRadius(10.0)
+                    .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
             }
         }
-        .padding(20)
+        /*.padding(20)
         .background(Color.myTertiaryBackground)
-        .cornerRadius(10.0)
+        .cornerRadius(10.0)*/
     }
 }
 

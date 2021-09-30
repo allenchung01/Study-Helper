@@ -77,6 +77,7 @@ struct AllCoursesGrid: View {
                     }
                 }
                 .padding(30)
+                .padding(.bottom, 70)
             } else {
                 LazyVGrid(columns: columns, alignment: .center, spacing: 30) {
                     TemplateCourseGridCell(name: "CS141", systemImageName: "laptopcomputer", days: [false, true, false, true, false, true, false])

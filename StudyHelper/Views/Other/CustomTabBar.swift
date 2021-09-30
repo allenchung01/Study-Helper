@@ -60,7 +60,7 @@ struct CustomTabBar: View {
                             .frame(width: 6, height: 6)
                     }
                 }
-                Spacer()
+                /*Spacer()
                 Button(action: {currentTab = .profile} ) {
                     VStack(alignment: .center, spacing: 20) {
                         Image(systemName: "person")
@@ -69,7 +69,7 @@ struct CustomTabBar: View {
                             .fill(currentTab == .profile ? .black : .mySecondaryBackground)
                             .frame(width: 6, height: 6)
                     }
-                }
+                }*/
                 Spacer()
             }
             .frame(maxWidth: .infinity)

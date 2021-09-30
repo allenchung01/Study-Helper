@@ -21,13 +21,14 @@ struct AssignmentRow: View {
             HStack(alignment: .center, spacing: 0) {
                 Spacer()
                 Text("Delete")
-                    .bold()
+                    .fontWeight(.semibold)
                     .foregroundColor(.white)
             }
             .padding(20)
-            .background(Color(.systemRed).opacity(offset < -160 ? 0.9 : 0.4))
+            .background(Color.myErrorRed.opacity(offset < -160 ? 1.0 : 0.4))
             .cornerRadius(15.0)
             // Actual Cell
+            ZStack {
             if assignment.name != nil {
             HStack(alignment: .center, spacing: 0) {
                 VStack(alignment: .leading, spacing: 3) {
@@ -35,11 +36,6 @@ struct AssignmentRow: View {
                         HStack(alignment: .center, spacing: 10) {
                             Text(assignment.course!.name!)
                                 .font(.subheadline)
-                                //.fontWeight(.light)
-                            /*if !assignment.course!.systemImageName!.isEmpty {
-                                Image(systemName: assignment.course!.systemImageName!)
-                                    .font(.subheadline)
-                            }*/
                         }
                         .foregroundColor(.secondary)
                         HStack(spacing: 10) {
@@ -53,9 +49,13 @@ struct AssignmentRow: View {
                                 saveContext()
                             })
                         }
+                        let date = Date()
+                        let daysUntilDue = Calendar.current.numberOfDaysBetween(from: date, to: assignment.dueDate!)
                         Text(TimeManager.dueDate(from: assignment.dueDate!))
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(
+                                daysUntilDue >= 0 || assignment.isCompleted == true ? .secondary : .myErrorRed
+                            )
                             .fontWeight(.light)
                     }
                 }
@@ -65,7 +65,6 @@ struct AssignmentRow: View {
             .background(Color.myPrimaryBackground)
             .cornerRadius(20.0)
             .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
-            .offset(x: offset, y: 0)
             .gesture (
                 DragGesture(minimumDistance: 15, coordinateSpace: .global)
                     .onChanged({ value in
@@ -100,6 +99,8 @@ struct AssignmentRow: View {
             }
                 }
             }
+        }
+            .offset(x: offset, y: 0)
         }
     }
     

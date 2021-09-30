@@ -13,15 +13,21 @@ struct AddAssignmentHeader: View {
             VStack(alignment: .leading) {
                 Text("Add a")
                     .fontWeight(.light)
-                    .font(.title)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
                 Text("New Assignment")
-                    .bold()
+                    .fontWeight(.semibold)
                     .font(.title)
             }
             Spacer()
-            Image(systemName: "paperclip.circle.fill")
-                .font(.title)
+            Image(systemName: "paperclip")
+                .frame(width: 40, height: 40)
+                .background(Color.myComplementaryColor3)
+                .font(.caption)
+                .cornerRadius(10.0)
+                .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         }
+        .padding(.top, 10)
     }
 }
 

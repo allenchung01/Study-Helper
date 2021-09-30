@@ -15,7 +15,7 @@ struct InfoSection<Content: View>: View {
         VStack(alignment: .leading, spacing: 20) {
             Text(title)
                 .font(.title3)
-                .bold()
+                .fontWeight(.semibold)
             content
         }
         .padding(30)

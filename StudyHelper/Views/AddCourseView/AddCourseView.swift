@@ -35,11 +35,14 @@ struct AddCourseView: View {
                     Divider()
                     InfoSection(title: "Course Info") {
                         InfoField(text: $courseName, fieldName: "Course Name", placeholder: "e.g. CS 255", systemImageName: "folder")
+                        Divider()
                         IconSelector(selectedImage: $selectedImage)
                     }
                     InfoSection(title: "Time Slot") {
                         TimeSelector(time: $startTime, fieldName: "Start Time", systemImageName: "clock")
+                        Divider()
                         TimeSelector(time: $endTime, fieldName: "End Time", systemImageName: "clock")
+                        Divider()
                         WeekDaySelector(selectedDays: $days)
                     }
                     Spacer()
@@ -56,7 +59,7 @@ struct AddCourseView: View {
                 }
             }
             if appEnvironment.isDisplayingAddCourseErrorBanner {
-                Banner(text: "Error", color: UIColor.systemRed, subText: "Please complete all fields.", systemImageName: "exclamationmark.circle.fill")
+                Banner(text: "Error", color: .myErrorRed, subText: "Please complete all fields.", systemImageName: "exclamationmark.circle.fill")
             }
         }
     }
