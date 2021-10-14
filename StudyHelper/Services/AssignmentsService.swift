@@ -18,11 +18,17 @@ class AssignmentsService {
         assignment.course = course
         assignment.isCompleted = false
         assignment.timestamp = Date()
+        
+        NotificationManager.instance.scheduleAssignmentNotification(title: name, subtitle: "Assignment Due Tomorrow", date: dueDate, assignment: assignment)
+        
         saveContext(viewContext: viewContext)
         return true
     }
     
     func deleteAssignment(assignment: Assignment, viewContext: NSManagedObjectContext) {
+        
+        NotificationManager.instance.cancelNotification(assignment: assignment)
+        
         viewContext.delete(assignment)
         saveContext(viewContext: viewContext)
     }

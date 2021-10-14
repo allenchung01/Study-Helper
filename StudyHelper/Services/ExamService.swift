@@ -17,11 +17,17 @@ class ExamService {
         exam.date = date
         exam.course = course
         exam.timestamp = Date()
+        
+        NotificationManager.instance.scheduleExamNotification(title: name, subtitle: "Exam Starting Soon", date: date, exam: exam)
+        
         saveContext(viewContext: viewContext)
         return true
     }
     
     func deleteExam(exam: Exam, viewContext: NSManagedObjectContext) {
+        
+        NotificationManager.instance.cancelNotification(exam: exam)
+        
         viewContext.delete(exam)
         saveContext(viewContext: viewContext)
     }

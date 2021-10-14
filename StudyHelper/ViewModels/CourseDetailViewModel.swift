@@ -17,6 +17,7 @@ class CourseDataViewModel {
         for exam in course.exams!.allObjects {
             viewContext.delete(exam as! NSManagedObject)
         }
+        NotificationManager.instance.cancelNotification(course: course)
         viewContext.delete(course)
         saveContext(viewContext: viewContext)
     }

@@ -21,9 +21,17 @@ class AddCourseViewModel: ObservableObject {
         course.timestamp = Date()
         course.days = days
         course.systemImageName = selectedImageName
-                                
+        
+        scheduleNotification(name: name, startTime: startTime, days: days, course: course)
+        
         save(viewContext: viewContext)
+        
         return true
+    }
+    
+    private func scheduleNotification(name: String, startTime: Date, days: [Bool], course: Course) {
+        NotificationManager.instance.requestAuthorization()
+        NotificationManager.instance.scheduleCourseNotification(title: name, subtitle: "Class Starting Soon", time: startTime, days: days, course: course)
     }
     
     // Verifies that all fields are filled out.

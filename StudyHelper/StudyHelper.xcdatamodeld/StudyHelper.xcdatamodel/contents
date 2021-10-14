@@ -4,6 +4,7 @@
         <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notifications" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="assignments" inverseEntity="Course"/>
     </entity>
@@ -11,6 +12,7 @@
         <attribute name="days" optional="YES" attributeType="Transformable" customClassName="[Bool]"/>
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="Time"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notifications" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO" customClassName="Time"/>
         <attribute name="systemImageName" optional="YES" attributeType="String"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -20,12 +22,13 @@
     <entity name="Exam" representedClassName="Exam" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notifications" optional="YES" attributeType="Transformable" customClassName="[String]"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="exams" inverseEntity="Course"/>
     </entity>
     <elements>
-        <element name="Assignment" positionX="-63" positionY="18" width="128" height="14"/>
-        <element name="Course" positionX="-63" positionY="-18" width="128" height="149"/>
-        <element name="Exam" positionX="-54" positionY="45" width="128" height="89"/>
+        <element name="Assignment" positionX="-63" positionY="18" width="128" height="119"/>
+        <element name="Course" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="Exam" positionX="-54" positionY="45" width="128" height="104"/>
     </elements>
 </model>

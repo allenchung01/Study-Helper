@@ -25,6 +25,7 @@ struct CallToActionButton: View {
             .cornerRadius(20.0)
             .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)
             .padding(30)
+            .background(Color.white.opacity(0.0))
         }
     }
 }
