@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EnterNameScreen: View {
+    @Environment(\.colorScheme) var colorScheme
     
     @Binding var isPresented: Bool
     
@@ -15,7 +16,7 @@ struct EnterNameScreen: View {
     
     var body: some View {
         ZStack {
-            Color.myComplementaryColor
+            Color.mySecondaryBackground
                 .ignoresSafeArea()
             VStack(alignment: .center, spacing: 40) {
                 
@@ -26,7 +27,7 @@ struct EnterNameScreen: View {
                 Text("Study Stack")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                 InfoSection(title: "Enter your name.") {
                     InfoField(text: $name, fieldName: "Name", placeholder: "e.g. John", systemImageName: "person")
                 }

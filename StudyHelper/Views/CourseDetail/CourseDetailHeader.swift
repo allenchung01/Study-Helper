@@ -17,17 +17,15 @@ struct CourseDetailHeader: View {
         let endTimeText = TimeManager.timeFromDate(date: course.endTime!)
         HStack(alignment: .center, spacing: 0) {
             VStack(alignment: .leading, spacing: 3) {
-                HStack(spacing: 10) {
-                    course.days![0] == true ? Text("Sun").fontWeight(.light) : nil
-                    course.days![1] == true ? Text("Mon").fontWeight(.light) : nil
-                    course.days![2] == true ? Text("Tue").fontWeight(.light) : nil
-                    course.days![3] == true ? Text("Wed").fontWeight(.light) : nil
-                    course.days![4] == true ? Text("Thu").fontWeight(.light) : nil
-                    course.days![5] == true ? Text("Fri").fontWeight(.light) : nil
-                    course.days![6] == true ? Text("Sat").fontWeight(.light) : nil
-                }
-                .foregroundColor(.secondary)
-                .font(.subheadline)
+                Image(systemName: course.systemImageName!)
+                    .font(.caption)
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.black)
+                    //.font(.title3)
+                    .background(Color.myComplementaryColor)
+                    .cornerRadius(10.0)
+                    .padding(.bottom, 10)
+                    .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
                 HStack(alignment: .center, spacing: 0) {
                     Text(course.name!)
                         .fontWeight(.semibold)
@@ -36,6 +34,18 @@ struct CourseDetailHeader: View {
                 }
                 HStack(alignment: .center, spacing: 10) {
                     //Image(systemName: "clock")
+                    HStack(spacing: 10) {
+                        course.days![0] == true ? Text("Sun").fontWeight(.light) : nil
+                        course.days![1] == true ? Text("Mon").fontWeight(.light) : nil
+                        course.days![2] == true ? Text("Tue").fontWeight(.light) : nil
+                        course.days![3] == true ? Text("Wed").fontWeight(.light) : nil
+                        course.days![4] == true ? Text("Thu").fontWeight(.light) : nil
+                        course.days![5] == true ? Text("Fri").fontWeight(.light) : nil
+                        course.days![6] == true ? Text("Sat").fontWeight(.light) : nil
+                    }
+                    .foregroundColor(.secondary)
+                    .font(.subheadline)
+                    Text("•")
                     Text(startTimeText)
                         .fontWeight(.light)
                     Text("-")
@@ -47,12 +57,6 @@ struct CourseDetailHeader: View {
                 .font(.subheadline)
             }
             .padding(.top, 10)
-            Image(systemName: course.systemImageName!)
-                .frame(width: 50, height: 50)
-                .foregroundColor(.black)
-                //.font(.title3)
-                .background(Color.myComplementaryColor)
-                .cornerRadius(10.0)
                 //.shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
         }
     }

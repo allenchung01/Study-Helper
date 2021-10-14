@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TemplateAssignmentRow: View {
+    @Environment(\.colorScheme) var colorScheme
     
     var name: String
     var course: String

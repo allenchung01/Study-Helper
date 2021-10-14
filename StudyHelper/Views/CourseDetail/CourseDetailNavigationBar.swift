@@ -24,9 +24,9 @@ struct CourseDetailNavigationBar: View {
             }
             Spacer()
             Menu(content: {
-                Button(action: {}) {
+                /*Button(action: {}) {
                     Text("Edit Course")
-                }
+                }*/
                 if #available(iOS 15.0, *) {
                     Button(role: .destructive, action: { vm.deleteCourse(course: course, viewContext: viewContext)
                         dismissView()

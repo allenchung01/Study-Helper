@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TemplateExamCell: View {
+    @Environment(\.colorScheme) var colorScheme
     
     var name: String
     var course: String

@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct StudyHelperApp: App {
-    //let persistenceController = PersistenceController.shared
-    let persistenceController = PersistenceController.preview
+    let persistenceController = PersistenceController.shared
+    //let persistenceController = PersistenceController.preview
     
     let appEnvironment = AppEnvironment()
 

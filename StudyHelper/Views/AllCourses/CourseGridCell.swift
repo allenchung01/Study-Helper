@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CourseGridCell: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     private var course: Course
     /*private var startTimeString: String
     private var endTimeString: String*/
@@ -20,6 +22,7 @@ struct CourseGridCell: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
+            if course.name != nil {
             VStack(alignment: .leading, spacing: 3) {
                 if !course.systemImageName!.isEmpty {
                     Image(systemName: course.systemImageName!)
@@ -59,6 +62,7 @@ struct CourseGridCell: View {
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)*/
+            }
             }
         }
         .padding(30)

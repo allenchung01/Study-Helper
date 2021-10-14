@@ -18,13 +18,13 @@ struct CallToActionButton: View {
                 Text(text)
                     .fontWeight(.semibold)
                     .padding(20)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.myButtonColor.opacity(0.9))
-                    .foregroundColor(.white)
-                    .cornerRadius(20.0)
-                    .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)
-                    .padding(.horizontal, 30)
             }
+            .frame(maxWidth: .infinity)
+            .background(Color.myButtonColor.opacity(0.9))
+            .foregroundColor(.white)
+            .cornerRadius(20.0)
+            .shadow(color: .myShadow ,radius: 10, x: 0.0, y: 5.0)
+            .padding(30)
         }
     }
 }

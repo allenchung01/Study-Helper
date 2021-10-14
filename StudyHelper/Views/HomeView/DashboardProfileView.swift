@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DashboardProfileView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var name: String
     
     var body: some View {

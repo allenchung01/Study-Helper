@@ -8,43 +8,40 @@
 import SwiftUI
 
 struct IconSelector: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var selectedImage: String
     
     private let systemImageNames = [
         "",
         "laptopcomputer", // Computers
         "x.squareroot", // Math
+        "testtube.2", // Science
+        "book.closed", // Reading
+        "map", //Geography
+        "globe.americas", // Nature/ archeology
         "paintbrush.pointed", // Art
         "pencil", // Writing
-        "music.note" // Music
-        // Business
-        // Language
-        // Science
-        // Nature
-        // Politics
-        // Finance
-        // Law
-        // Sports / Fitness
-        // Phsycology
-        // Nursing/ Medical
-        // Lawyer
-        // Cook
-        // Nature/ archeology
-        // Teaching / Education
-        // History
-        // Religion
-        // Architecture
-        // Agriculture
-        // Culture / Ethinc / Gender
-        // Biology
-        // Marketing
-        // Mechanic
-        // Recreation / Parks
-        // Physics
-        // Visual / Performing Arts
-        // Construction
-        // Transportation
-        // Reading
+        "music.note", // Music
+        "suitcase", // Business
+        "stethoscope", // Nursing/ Medical
+        "allergens", // Biology
+        "creditcard", // Finance
+        "person.wave.2", // Language
+        "brain", // Phsycology
+        "theatermasks", // Visual / Performing
+        "leaf", // Nature
+        "newspaper", // Politics
+        "scalemass", // Sports / Fitness
+        "briefcase", // Lawyer
+        "camera", // Photography
+        "building", // Architecture
+        "wrench", // Mechanic
+        "fork.knife", // Cook
+        "circle",
+        "square",
+        "triangle",
+        "diamond",
+        "pentagon"
         
     ]
     

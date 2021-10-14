@@ -32,8 +32,10 @@ struct AddExamView: View {
                     InfoSection(title: "Exam Info") {
                         InfoField(text: $examName, fieldName: "Exam Name", placeholder: "e.g. Midterm 1", systemImageName: "hourglass")
                     }
-                    InfoSection(title: "Dates") {
-                        TimeSelector(time: $date, fieldName: "Exam Date", systemImageName: "calendar", isFullDate: true)
+                    if isPresented {
+                        InfoSection(title: "Dates") {
+                            TimeSelector(time: $date, fieldName: "Exam Date", systemImageName: "calendar", isFullDate: true)
+                        }
                     }
                     Spacer()
                 }

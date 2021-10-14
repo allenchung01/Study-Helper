@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CoursesScrollView: View {
+    @Environment(\.colorScheme) var colorScheme
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Course.timestamp, ascending: true)],

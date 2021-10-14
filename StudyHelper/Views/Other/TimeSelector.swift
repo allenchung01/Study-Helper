@@ -25,11 +25,12 @@ struct TimeSelector: View {
                     DatePicker(selection: $time, displayedComponents: [.date, .hourAndMinute], label: {})
                         .frame(maxWidth: 150)
                         .scaledToFit()
-                        //.padding(.leading, -8)
+                        .padding(.leading, -8)
                         .datePickerStyle(CompactDatePickerStyle())
                         .transformEffect(.init(scaleX: 0.8, y: 0.8))
                         .font(.body.weight(.semibold))
                         .offset(x: 22, y: 0)
+                        //.datePickerStyle(GraphicalDatePickerStyle())
                 } else {
                     DatePicker(selection: $time, displayedComponents: .hourAndMinute, label: {})
                         .frame(maxWidth: 100)
@@ -37,6 +38,7 @@ struct TimeSelector: View {
                         .padding(.leading, -8)
                         .datePickerStyle(CompactDatePickerStyle())
                         .transformEffect(.init(scaleX: 0.8, y: 0.8))
+                        //.datePickerStyle(GraphicalDatePickerStyle())
                 }
             }
             Spacer()

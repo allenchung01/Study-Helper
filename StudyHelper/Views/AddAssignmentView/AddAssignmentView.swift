@@ -32,8 +32,10 @@ struct AddAssignmentView: View {
                     InfoSection(title: "Assignment Info") {
                         InfoField(text: $assignmentName, fieldName: "Assignment Name", placeholder: "e.g. Homework 1", systemImageName: "paperclip")
                     }
-                    InfoSection(title: "Deadline") {
-                        TimeSelector(time: $dueDate, fieldName: "Due Date", systemImageName: "calendar", isFullDate: true)
+                    if isPresented {
+                        InfoSection(title: "Deadline") {
+                            TimeSelector(time: $dueDate, fieldName: "Due Date", systemImageName: "calendar", isFullDate: true)
+                        }
                     }
                     Spacer()
                 }

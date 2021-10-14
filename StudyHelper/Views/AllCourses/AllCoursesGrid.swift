@@ -95,7 +95,7 @@ struct AllCoursesGrid: View {
                         isAddingCourse = true
                     }) {
                         ZStack {
-                            RadialGradient(colors: [.myButtonColor.opacity(0.5), .white.opacity(0)], center: .center, startRadius: 0, endRadius: 200)
+                            RadialGradient(colors: [.myButtonColor.opacity(0.5), colorScheme == .light ? .white.opacity(0) : .black.opacity(0)], center: .center, startRadius: 0, endRadius: 200)
                             VStack(alignment: .center, spacing: 20) {
                                 Image(systemName: "plus")
                                     .font(.title2)

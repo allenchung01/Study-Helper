@@ -19,7 +19,7 @@ struct PersistenceController {
         course.name = "CS 141"
         course.startTime = Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!
         course.endTime = Calendar.current.date(bySettingHour: 8, minute: 50, second: 0, of: Date())!
-        course.days = [false, false, true, true, true, false, false]
+        course.days = [false, false, true, false, true, false, false]
         course.systemImageName = "laptopcomputer"
         let assignment = Assignment(context: viewContext)
         assignment.name = "Homework 1"
@@ -42,9 +42,9 @@ struct PersistenceController {
         course2.name = "MATH 210"
         /*course2.startTime = Calendar.current.date(bySettingHour: 11, minute: 30, second: 0, of: Date())!
         course2.endTime = Calendar.current.date(bySettingHour: 12, minute: 20, second: 0, of: Date())!*/
-        course2.startTime = Calendar.current.date(bySettingHour: 22, minute: 50, second: 0, of: Date())!
-        course2.endTime = Calendar.current.date(bySettingHour: 23, minute: 0, second: 0, of: Date())!
-        course2.days = [false, false, true, true, true, false, false]
+        course2.startTime = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date())!
+        course2.endTime = Calendar.current.date(bySettingHour: 9, minute: 50, second: 0, of: Date())!
+        course2.days = [false, false, true, false, true, true, false]
         course2.systemImageName = "x.squareroot"
         
         let course3 = Course(context: viewContext)
@@ -52,10 +52,35 @@ struct PersistenceController {
         course3.name = "MUS 107"
         /*course3.startTime = Calendar.current.date(bySettingHour: 16, minute: 0, second: 0, of: Date())!
         course3.endTime = Calendar.current.date(bySettingHour: 16, minute: 50, second: 0, of: Date())!*/
-        course3.startTime = Calendar.current.date(bySettingHour: 23, minute: 0, second: 0, of: Date())!
-        course3.endTime = Calendar.current.date(bySettingHour: 23, minute: 50, second: 0, of: Date())!
-        course3.days = [false, false, true, true, true, false, false]
+        course3.startTime = Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!
+        course3.endTime = Calendar.current.date(bySettingHour: 8, minute: 50, second: 0, of: Date())!
+        course3.days = [false, true, false, true, false, true, false]
         course3.systemImageName = "music.note"
+        
+        let course4 = Course(context: viewContext)
+        course4.timestamp = Date()
+        course4.name = "BIO 100"
+        /*course3.startTime = Calendar.current.date(bySettingHour: 16, minute: 0, second: 0, of: Date())!
+        course3.endTime = Calendar.current.date(bySettingHour: 16, minute: 50, second: 0, of: Date())!*/
+        course4.startTime = Calendar.current.date(bySettingHour: 14, minute: 0, second: 0, of: Date())!
+        course4.endTime = Calendar.current.date(bySettingHour: 14, minute: 50, second: 0, of: Date())!
+        course4.days = [false, true, false, true, false, false, false]
+        course4.systemImageName = "testtube.2"
+        let assignment3 = Assignment(context: viewContext)
+        assignment3.name = "Worksheet 2"
+        assignment3.timestamp = Date()
+        assignment3.dueDate = Calendar.current.date(bySettingHour: 18, minute: 30, second: 0, of: Date())!
+        assignment3.isCompleted = false
+        course4.assignments = [assignment3]
+        
+        let course5 = Course(context: viewContext)
+        course5.timestamp = Date()
+        course5.name = "CS 150"
+        course5.startTime = Calendar.current.date(bySettingHour: 16, minute: 0, second: 0, of: Date())!
+        course5.endTime = Calendar.current.date(bySettingHour: 16, minute: 50, second: 0, of: Date())!
+        course5.days = [false, true, false, true, false, false, false]
+        course5.systemImageName = "laptopcomputer"
+        
         do {
             try viewContext.save()
         } catch {

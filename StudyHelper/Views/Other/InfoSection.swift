@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct InfoSection<Content: View>: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var title: String
     @ViewBuilder var content: Content
     

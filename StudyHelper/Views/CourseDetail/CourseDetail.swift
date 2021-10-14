@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CourseDetail: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var appEnvironment: AppEnvironment
     
     var course: Course
@@ -25,10 +26,16 @@ struct CourseDetail: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 40) {
                     CourseDetailNavigationBar(course: course)
+                        .background(
+                            Color.myTertiaryBackground
+                                .padding(-30)
+                                .padding(.top, -50)
+                                .ignoresSafeArea()
+                        )
                     CourseDetailHeader(course: course)
                         .background(
                             Color.myTertiaryBackground
-                                //.cornerRadius(40.0, corners: [.bottomLeft, .bottomRight])
+                                .cornerRadius(40.0, corners: [.bottomRight])
                                 .padding(-30)
                                 
                         )

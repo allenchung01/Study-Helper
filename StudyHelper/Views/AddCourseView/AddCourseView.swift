@@ -29,7 +29,7 @@ struct AddCourseView: View {
         ZStack {
             Color.mySecondaryBackground
                 .ignoresSafeArea()
-            ScrollView {
+            ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 30) {
                     AddCourseHeader()
                     Divider()
@@ -38,6 +38,7 @@ struct AddCourseView: View {
                         Divider()
                         IconSelector(selectedImage: $selectedImage)
                     }
+                    if isPresented {
                     InfoSection(title: "Time Slot") {
                         TimeSelector(time: $startTime, fieldName: "Start Time", systemImageName: "clock")
                         Divider()
@@ -45,15 +46,17 @@ struct AddCourseView: View {
                         Divider()
                         WeekDaySelector(selectedDays: $days)
                     }
+                    }
                     Spacer()
                 }
                 .padding(30)
+                .padding(.bottom, 50)
             }
             CallToActionButton(text: "Add Course") {
                 if vm.addCourse(name: courseName, startTime: startTime, endTime: endTime, days: days, selectedImageName: selectedImage, viewContext: viewContext) {
                     appEnvironment.displayBanner(bannerType: .addCourseSuccess, subText: courseName)
                     //presentationMode.wrappedValue.dismiss()
-                    
+                    print("Should dismiss")
                     isPresented = false
                 } else {
                     appEnvironment.displayBanner(bannerType: .addCourseError, subText: "Please complete all fields.")

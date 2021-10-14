@@ -21,18 +21,6 @@ class AddCourseViewModel: ObservableObject {
         course.timestamp = Date()
         course.days = days
         course.systemImageName = selectedImageName
-        
-        /*let assignment = Assignment(context: viewContext)
-        assignment.name = "Homework 1"
-        assignment.dueDate = Date()
-        assignment.isCompleted = false
-        assignment.timestamp = Date()
-        let assignment2 = Assignment(context: viewContext)
-        assignment2.name = "Homework 2"
-        assignment2.dueDate = Date()
-        assignment2.isCompleted = false
-        assignment2.timestamp = Date()
-        course.assignments = [assignment, assignment2]*/
                                 
         save(viewContext: viewContext)
         return true

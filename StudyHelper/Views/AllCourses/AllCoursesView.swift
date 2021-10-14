@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct AllCoursesView: View {
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView {
+            VStack(alignment: .leading, spacing: 0) {
             ZStack {
                 Color.mySecondaryBackground
                     .ignoresSafeArea()
@@ -31,7 +33,9 @@ struct AllCoursesView: View {
                             //.fill(Color.myButtonColor.opacity(0.2))
                 
             }
-        }
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+        }//.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
