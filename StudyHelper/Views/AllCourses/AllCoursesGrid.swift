@@ -95,14 +95,18 @@ struct AllCoursesGrid: View {
                         isAddingCourse = true
                     }) {
                         ZStack {
-                            RadialGradient(colors: [.myButtonColor.opacity(0.5), colorScheme == .light ? .white.opacity(0) : .black.opacity(0)], center: .center, startRadius: 0, endRadius: 200)
+                            /*RadialGradient(colors: [.myComplementaryColor.opacity(0.9), colorScheme == .light ? .white.opacity(0) : .black.opacity(0)], center: .center, startRadius: 0, endRadius: 200)*/
                             VStack(alignment: .center, spacing: 20) {
                                 Image(systemName: "plus")
-                                    .font(.title2)
+                                    //.font(.title2)
                                 Text("Add Course")
-                                    .font(.title2)
+                                    //.font(.title2)
                                     .fontWeight(.semibold)
                             }
+                            .padding(30)
+                            .background(Color.myPrimaryBackground.opacity(0.8))
+                            .cornerRadius(20.0)
+                            .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
                         }
                     }
                 )

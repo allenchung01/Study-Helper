@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AssignmentList: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var course: Course?
     
     @Binding var numDays: NumDays
@@ -29,15 +31,20 @@ struct AssignmentList: View {
                     //Text(assignment.name!)
                 }
             } else {
-                ZStack {
+                ZStack(alignment: .leading) {
                     VStack(alignment: .leading, spacing: 20) {
                         TemplateAssignmentRow(name: "Homework 1", course: "CS 141", dueDate: "Wednesday, Sep 29, 12:00 AM", isCompleted: false, systemImageName: "laptopcomputer")
-                        TemplateAssignmentRow(name: "Worksheet 1", course: "MUS 107", dueDate: "Thursday, Sep 30, 12:00 AM", isCompleted: true, systemImageName: "music.note")
+                        /*TemplateAssignmentRow(name: "Worksheet 1", course: "MUS 107", dueDate: "Thursday, Sep 30, 12:00 AM", isCompleted: true, systemImageName: "music.note")*/
                     }
                     .opacity(0.5)
                     .blur(radius: 3.0)
                     Text("No Assignments")
-                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                        .padding(26)
+                        .background(Color.myPrimaryBackground.opacity(0.8))
+                        .cornerRadius(20.0)
+                        .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
+                        .padding(30)
                 }
             }
         }

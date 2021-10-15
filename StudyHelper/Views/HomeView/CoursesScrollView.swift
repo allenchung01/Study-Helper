@@ -24,7 +24,7 @@ struct CoursesScrollView: View {
                         CourseCell(course: course)
                     }
                 } else {
-                    ZStack {
+                    ZStack(alignment: .leading) {
                         HStack(alignment: .center, spacing: 20) {
                             TemplateCourseCell(name: "CS 141", systemImageName: "laptopcomputer", startTime: "1:00 PM", endTime: "1:50 PM", progress: .awaitingStart)
                             TemplateCourseCell(name: "MUS 107", systemImageName: "music.note", startTime: "3:00 PM", endTime: "3:50 PM", progress: .awaitingStart)
@@ -32,7 +32,12 @@ struct CoursesScrollView: View {
                         .opacity(0.5)
                         .blur(radius: 3.0)
                         Text("No Courses Today")
-                            .fontWeight(.semibold)
+                            .foregroundColor(.primary)
+                            .padding(26)
+                            .background(Color.myPrimaryBackground.opacity(0.8))
+                            .cornerRadius(20.0)
+                            .shadow(color: .myShadow ,radius: 5, x: 0.0, y: 10.0)
+                            .padding(30)
                     }
                 }
             }
